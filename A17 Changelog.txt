@@ -1,0 +1,78 @@
+<----- 28 Dec 2018 ----->
+Craftworx 3.0
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items
+
+Items:
+Increased stack sizes for Schematics/magazines, resources, drinks, bandages, and med kits
+Added flaming crossbow bolt & schematic, ammo type to gunCrossbow
+Added scrap arrows, ammo to gunWoodenBow and gunCompoundBow
+Added scrap iron shiv, axe, pick, and shovel
+Added turd launcher and turd bolts
+Added junk items (brass, cloth, glass, iron, lead, mechanical, paper, plastic, and wood
+Added clothing items made in Tailor Made perk
+Added refined coal
+Added turds back into the game
+Added resourceAddobe
+Added toolLockpick
+Added hand lantern, hand lantern glass, hand lantern casing, and hand flashlight
+Added salted meat
+
+Recipes:
+Added scrap iron tools
+Added turd crossbow and turd bolt 
+Added flaming crossbow bolt and scrap arros
+Added alternate crafting recipes for iron and steel arrows and bolts
+Added refined coal
+Added beaker craftable in the forge
+Added recipes for tailor made perk clothing
+Added lockpick
+Added hand lantern and parts
+Added resource adobe
+Added white and peach adobe blocks
+Added salted meat
+
+Loot:
+Added junk lootgroups, and added itemJunk group to Junk group
+Returned turds to toilets
+Removed pistol+ammo from toilets
+Added flaming bolt schematic to rarebooks
+Added lockpicks and some junk to loot containers
+Made trash bags and bird nests destroy on close
+
+Blocks:
+Set plants to harvest with the interact key
+Added unlocked versions of non-player-crafted doors
+Added Guppycur's placeable lights (flashlight, construction light, lantern)
+Added adobe white and peach blocks
+Set upgrade path to doors for unlocking with lockpicks
+Set upgrade path for safes for unlocking with lockpicks
+Restored ability to pick up paintings
+
+Progression:
+Added Lockpicking perk under Agility
+Added Tailor Made perk under Intellect
+
+Materials:
+Added mAdobe and MresourceaAdobe
+
+XUI and Windows:
+Added SMX UI elements
+
+To Do:
+Add signature weapons, portable combine station, carbon steel & kukri, working oven & sink, repeating crossbow, turd mortar, monocular
+Figure out how to change the lootlist entry for cntBin from 10 to 16
+Custom SMX splash screen for Craftworx
+
+<----- 28 Dec 2018 ----->
+Craftworx 3.1
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
+
+Updated foodSaltedMeat to (hopefully) work this time
+Updated scrap iron shiv to balance better against the bone shiv (instead of the hunting knife)
+Increased attacks per minute, entity and block damage on scrap iron tools
+Changed <config></config> to <craftworx></craftworx> for consistency
+Added Elucidus' QL improvements and impact wrench
+Updated modinfo.xml to reflect current version and included modlets and their authors
+
+To Do:
+Actually add in SMX UI code
