@@ -1,0 +1,54 @@
+<craftworx>
+
+<!-- Add impact wrench to advanced engineering perk -->
+<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='5']/@tags">autoTurret,meleeToolAuger,meleeToolChainsaw,Impact Wrench</set>
+
+	<append xpath="/progression/perks">
+
+<!-- New Perks -->
+		<perk name="perkLockpicking" parent="skillStealth" name_key="Lockpicking" desc_key="Unlocks the lockpick recipe at level 2 and decreases noise made by lockpicking" icon="ui_game_symbol_knunchuck">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="1" desc_key="reqAgilityLevel1"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="3" desc_key="reqAgilityLevel3"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="5" desc_key="reqAgilityLevel5"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="7" desc_key="reqAgilityLevel7"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10" desc_key="reqAgilityLevel10"/></level_requirements>
+		
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="2,5" value="1" tags="toolLockpick"/>
+			</effect_group>
+			
+			<effect_group>
+				<requirement name="HoldingItemHasTags" tags="lockpick"/>
+				<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="0.15,0.90" level="0,5"/>
+				<effect_description level="1" desc_base="Reduces lockpicking noise by 30%"/>
+				<effect_description level="2" desc_base="Can craft lockpicks. Reduces lockpicking noise by 45%"/>
+				<effect_description level="3" desc_base="Reduces lockpicking noise by 60%"/>
+				<effect_description level="4" desc_base="Reduces lockpicking noise by 75%"/>
+				<effect_description level="5" desc_base="Reduces lockpicking noise by 90%"/>
+			</effect_group>
+		</perk>
+		
+		<perk name="perkTailorMade" parent="skillCraftsmanship" max_level="5" name_key="Tailor-Made" desc_key="Unlocks the ability to craft clothing" icon="ui_game_symbol_tailoring">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="1" desc_key="reqIntellectLevel1"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="2" desc_key="reqIntellectLevel2"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="3" desc_key="reqIntellectLevel3"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="4" desc_key="reqIntellectLevel4"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="5" desc_key="reqIntellectLevel5"/></level_requirements>
+
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="tshirtBrown,shirtBrown"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="denimShortsPantsBrown,brownDenimPants"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sweatshirtBrown,hoodedSweatshirtBrown,flannelShirtBrown"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="leatherDusterBlack,blackCowboyHat,pufferCoatBrown"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="gothicPants,gothBootsBlack"/>
+				<effect_description level="1" desc_base="Craft basic long and short-sleeved shirts."/>
+				<effect_description level="2" desc_base="Craft basic shorts and pants."/>
+				<effect_description level="3" desc_base="Craft warmer shirts and sweatshirts."/>
+				<effect_description level="4" desc_base="Craft leather duster and puffer jacket. Also craft the cowboy hat."/>
+				<effect_description level="5" desc_base="Craft gothic leather clothing."/>
+			</effect_group>
+		</perk>
+		
+	</append>
+	
+</craftworx>

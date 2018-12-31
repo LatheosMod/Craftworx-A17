@@ -1,0 +1,12 @@
+<craftworx>
+	<insertAfter xpath="/Sounds/SoundDataNode[@name='nailgun_fire']">
+             <SoundDataNode name="impactWrench"> <AudioSource name="Sounds/AudioSource_Reloads" />
+				<Noise ID="1" range="14" volume="30" time="2" muffled_when_crouched="0.65" heat_map_strength="0.05" 
+                 heat_map_time="60" />
+				<AudioClip ClipName="#@modfolder:Sounds/sounds.unity3d?impactwrench" />
+				<AudioClip ClipName="#@modfolder:Sounds/sounds.unity3d?impactwrench1" />
+				<AudioClip ClipName="#@modfolder:Sounds/sounds.unity3d?impactwrench2" />
+				<LocalCrouchVolumeScale value="1" /> <CrouchNoiseScale value="1" /> <NoiseScale value="1" /> <MaxVoices  
+                 value="30" /> <MaxVoicesPerEntity value="10" /> <MaxRepeatRate value="0.001" /> </SoundDataNode>
+	</insertAfter>
+</craftworx>

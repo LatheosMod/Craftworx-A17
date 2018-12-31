@@ -1,0 +1,154 @@
+<craftworx>
+
+<!-- Adding new loot groups for junk items -->
+<insertBefore xpath="/lootcontainers/lootgroup[@name='junk']" >
+	<lootgroup name="junkBrass" >
+		<item name="junkBrassHinge"/>
+		<item name="junkBrassMonkey"/>
+		<item name="junkBrassCowBell"/>
+		<item name="junkBrassKnuckles"/>
+	</lootgroup>
+
+	<lootgroup name="junkCloth">
+		<item name="junkClothRags" count="1,3"/>
+		<item name="junkClothOldBlanket"/>
+		<item name="junkClothTeddyBear"/>
+		<item name="junkClothRug"/>
+	</lootgroup>
+	
+	<lootgroup name="junkGlass">
+		<item name="junkGlassPerfume"/>
+		<item name="junkGlassCompact"/>
+		<item name="junkGlassFrame"/>
+		<item name="junkGlassEye"/>
+	</lootgroup>
+	
+	<lootgroup name="junkIron">
+		<item name="junkIronSoldier"/>
+		<item name="junkIronPaperClips" count="1,6"/>
+		<item name="junkIronWeight"/>
+		<item name="junkIronHinge"/>
+		<item name="junkIronScissors"/>
+	</lootgroup>
+	
+	<lootgroup name="junkLead">
+		<item name="junkLeadSoldier"/>
+		<item name="junkLeadSolder"/>
+		<item name="resourceFishingWeight"/>
+	</lootgroup>
+	
+	<lootgroup name="junkMechanical">
+		<item name="junkMechanicalKeyPad"/>
+		<item name="junkMechanicalOldWatch"/>
+		<item name="junkMechanicalTypeWriter"/>
+	</lootgroup> 
+	
+	<lootgroup name="junkPaper">
+		<item name="junkPaperNews"/>
+		<item name="junkPaperToilet"/>
+		<item name="junkPaperMatches"/>
+		<item name="junkPaperPlayingCards"/>
+	</lootgroup>
+
+	<lootgroup name="junkPlastic">
+		<item name="junkPlasticCds"/>
+		<item name="junkPlasticSoldier"/>
+		<item name="junkPlasticBricks"/>
+		<item name="junkPlasticKite"/>
+		<item name="junkPlasticFrisbee"/>
+		<item name="junkPlasticHairBrush"/>
+		<item name="junkPlasticToothBrush"/>
+		<item name="junkPlasticShoppingBag"/>
+	</lootgroup>
+
+	<lootgroup name="junkWood">
+		<item name="junkWoodSoldier"/>
+		<item name="junkWoodWhistle"/>
+		<item name="junkWoodSpoon"/>
+		<item name="junkWoodYoyo"/>
+	</lootgroup>
+
+	 <lootgroup name="itemJunk">
+		<item group="junkBrass"/>
+		<item group="junkCloth"/>
+		<item group="junkGlass"/>
+		<item group="junkIron"/>
+		<item group="junkLead"/>
+		<item group="junkMechanical"/>
+		<item group="junkPaper"/>
+		<item group="junkPlastic"/>
+		<item group="junkWood"/>
+	</lootgroup> 
+</insertBefore>
+
+
+<!-- Putting turds back in toilets -->
+<append xpath="/lootcontainers/lootgroup[@name='toiletLoot']"> 
+    <item name="resourceTurd" count="1,2" prob="0.3"/>
+</append>
+
+<!-- Adding Flaming bolt recipe to rare books lootgroup -->
+<append xpath="/lootcontainers/lootgroup[@name='rareBooks']"> 
+	<item name="Flaming Crossbow Bolt Schematic"/> <!-- ammoCrossbowBoltFlamingSchematic -->
+</append>
+
+<!-- Adding item junk to junk lootgroup -->
+<append xpath="/lootcontainers/lootgroup[@name='junk']"> 
+    <item group="itemJunk" count="1,2"/>
+</append>
+
+<!-- Removing the pistol+ammo from toiletLoot -->
+<remove xpath="/lootcontainers/lootgroup[@name='toiletLoot']/item[@group='weaponsPistol+ammo']" />
+
+
+<!-- Adding Aviary's Lawbreaker schematic to common books -->
+<!--<append xpath="/lootcontainers/lootgroup[@name='commonBooks']"> 
+	<item name="AviarysLawbreakerSchematic"/>
+</append> -->
+
+<!-- Adding new items to loot lists so they can be found in the world -->
+<append xpath="/lootcontainers/lootcontainer[@id='6']"> <!-- Nightstands -->
+	<item name="toolLockpick" count="1" prob="0.75"/> <!-- toolLockpick -->
+	<item name="junkPlasticHairBrush" count="1" prob="0.5"/>
+</append>
+
+<append xpath="/lootcontainers/lootcontainer[@id='7']"> <!-- Medicine Cabinets -->
+	<item name="toolLockpick" count="1" prob="0.5"/> <!-- toolLockpick -->
+	<item name="junkPaperToilet" count="1" prob="0.5"/>
+</append>
+	
+<append xpath="/lootcontainers/lootcontainer[@id='8']"> <!-- Kitchen Cabinets -->
+	<item name="toolLockpick" count="1" prob="0.25"/> <!-- toolLockpick -->
+</append>
+	
+<append xpath="/lootcontainers/lootcontainer[@id='9']"> <!-- Backpacks -->
+	<item name="toolLockpick" count="1" prob="0.75"/> <!-- toolLockpick -->
+</append>
+
+<append xpath="/lootcontainers/lootcontainer[@id='36']"> <!-- Suitcase -->
+	<item name="toolLockpick" count="1" prob="0.25"/> <!-- toolLockpick -->
+</append>
+	
+<append xpath="/lootcontainers/lootcontainer[@id='43']"> <!-- Lockers -->
+	<item name="toolLockpick" count="1" prob="0.75"/> <!-- toolLockpick -->
+</append>
+	
+<append xpath="/lootcontainers/lootcontainer[@id='44']"> <!-- Filing Cabinet -->
+	<item name="toolLockpick" count="1" prob="0.25"/> <!-- toolLockpick -->
+</append>
+	
+<append xpath="/lootcontainers/lootcontainer[@id='48']"> <!-- Purse -->
+	<item name="toolLockpick" count="1" prob="0.75"/> <!-- toolLockpick -->
+</append>
+	
+<append xpath="/lootcontainers/lootcontainer[@id='55']"> <!-- Cash Register -->
+	<item name="toolLockpick" count="1" prob="0.5"/> <!-- toolLockpick -->
+</append>
+
+<!-- Making nests and trash (bags and the small bin) destroy on loot -->
+<setattribute xpath="/lootcontainers/lootcontainer[@id='10']" name="destroy_on_close">true</setattribute> <!-- garbage -->
+
+<setattribute xpath="/lootcontainers/lootcontainer[@id='25']" name="destroy_on_close">true</setattribute> <!-- Bird Nests -->
+
+
+</craftworx>

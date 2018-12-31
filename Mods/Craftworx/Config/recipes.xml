@@ -1,0 +1,416 @@
+<craftworx>
+
+<!-- Adobe scrap pathing -->
+<!--
+<insertAfter xpath="recipes/recipe[@name='resourceYuccaFibers']">
+<recipe name="resourceAdobe" count="1" tooltip="ttScrapMetalBrass">
+	<wildcard_forge_category />
+</recipe>
+</insertAfter>
+-->
+
+    <append xpath="/recipes">
+	
+<!-- Scrap Iron Tools -->
+<recipe name="Scrap Iron Axe" count="1"> <!-- meleeToolFireaxeScrapIron -->
+	<ingredient name="resourceScrapIron" count="50"/>
+	<ingredient name="resourceYuccaFibers" count="5"/>
+	<ingredient name="resourceWood" count="2"/>
+</recipe>
+
+<recipe name="Scrap Iron Pickaxe" count="1"> <!-- meleeToolPickaxeScrapIron --> 
+	<ingredient name="resourceScrapIron" count="80"/>
+	<ingredient name="resourceYuccaFibers" count="5"/>
+	<ingredient name="resourceWood" count="3"/>
+</recipe>
+
+<recipe name="Scrap Iron Shovel" count="1"> <!-- meleeToolShovelScrapIron -->
+	<ingredient name="resourceScrapIron" count="65"/>
+	<ingredient name="resourceYuccaFibers" count="5"/>
+	<ingredient name="resourceWood" count="3"/>
+</recipe>
+
+<recipe name="Scrap Iron Shiv" count="1"> <!-- meleeToolShivScrapIron -->
+	<ingredient name="resourceScrapIron" count="8"/>
+	<ingredient name="resourceYuccaFibers" count="5"/>
+</recipe>
+
+<!-- Turd Weaponry -->
+<recipe name="Turd Bolt" count="1" scrapable="False" craft_time="2"> <!-- ammoTurdBolt -->
+	<ingredient name="resourceTurd" count="1"/>
+	<ingredient name="resourceClayLump" count="1"/> <!-- to form turd around crossbow bolt -->
+	<ingredient name="ammoCrossbowBoltIron" count="1"/>
+</recipe>
+
+<recipe name="Turd Launcher" count="1" scrapable="True" > <!-- gunTurdLauncher -->
+    <ingredient name="resourceWood" count="10"/>
+    <ingredient name="resourceScrapIron" count="25"/>
+    <ingredient name="resourceYuccaFibers" count="4"/>
+</recipe>
+
+<!-- Ammunition -->
+<recipe name="Flaming Crossbow Bolt" count="1" craft_area="workbench" tags="learnable"> <!-- ammoCrossbowBoltFlaming -->
+	<ingredient name="ammoCrossbowBoltSteelAP" count="1"/>
+	<ingredient name="resourceGunPowder" count="2"/>
+	<ingredient name="resourceCloth" count="1"/>
+	<ingredient name="resourceTallow" count="1"/>
+</recipe>
+
+<recipe name="Scrap Arrow" count="1"> <!-- ammoArrowScrapIron -->
+	<ingredient name="resourceScrapIron" count="3"/>
+	<ingredient name="resourceWood" count="1"/>
+	<ingredient name="resourceFeather" count="1"/>
+</recipe>
+
+<recipe name="ammoArrowIron" count="1" scrapable="False" craft_area="workbench">
+    <ingredient name="ammoArrowStone" count="1" />
+    <ingredient name="resourceArrowHeadIron" count="1" />
+</recipe>
+
+<recipe name="ammoArrowIron" count="1" scrapable="False" craft_area="workbench">
+    <ingredient name="Scrap Arrow" count="1" />
+    <ingredient name="resourceArrowHeadIron" count="1" />
+</recipe>
+
+<recipe name="ammoArrowSteelAP" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
+    <ingredient name="ammoArrowStone" count="1" />
+    <ingredient name="resourceArrowHeadSteelAP" count="1" />
+</recipe>
+
+<recipe name="ammoArrowSteelAP" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
+    <ingredient name="Scrap Arrow" count="1" />
+    <ingredient name="resourceArrowHeadSteelAP" count="1" />
+</recipe>
+
+<recipe name="ammoArrowSteelAP" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
+    <ingredient name="ammoArrowIron" count="1" />
+    <ingredient name="resourceArrowHeadSteelAP" count="1" />
+</recipe>
+
+<recipe name="ammoCrossbowBoltIron" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
+    <ingredient name="ammoCrossbowBoltStone" count="1" /> 
+    <ingredient name="resourceArrowHeadIron" count="1" />
+</recipe>
+
+<recipe name="ammoCrossbowBoltSteelAP" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
+    <ingredient name="ammoCrossbowBoltStone" count="1" />
+    <ingredient name="resourceArrowHeadSteelAP" count="1" />
+</recipe>
+
+<recipe name="ammoCrossbowBoltSteelAP" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
+    <ingredient name="ammoCrossbowBoltIron" count="1" />
+    <ingredient name="resourceArrowHeadSteelAP" count="1" />
+</recipe>
+
+<recipe name="resourceArrowHeadIron" count="1" scrapable="True" craft_area="workbench">
+    <ingredient name="ammoArrowIron" count="1" />
+</recipe>
+
+<recipe name="resourceArrowHeadSteelAP" count="1" scrapable="True" craft_area="workbench">
+    <ingredient name="ammoArrowSteelAP" count="1" />
+</recipe>
+
+<!-- Miscellaneous Items -->
+<recipe name="refinedCoal" count="1" scrapable="False" craft_area="chemistryStation">
+    <ingredient name="resourceCoal" count="25" />
+</recipe>
+
+<!--
+<recipe name="toolMonocular" count="1" scrapable="True" craft_area="forge" >
+	<ingredient name="unit_brass" count="50"/>
+	<ingredient name="unit_clay" count="15"/>
+	<ingredient name="unit_glass" count="40"/>
+</recipe>
+-->
+
+<recipe name="toolBeaker" count="1" scrapable="False" craft_area="forge" material_based="true">
+	<ingredient name="unit_glass" count="30" />
+    <ingredient name="unit_clay" count="10" />
+	<ingredient name="unit_lead" count="10"/>
+</recipe>
+	
+<!-- Impact Wrench -->
+<recipe name="Impact Wrench" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="resourceForgedSteel" count="80"/>
+	<ingredient name="resourceMechanicalParts" count="100"/>
+	<ingredient name="resourceDuctTape" count="10"/>
+	<ingredient name="resourceScrapPolymers" count="50"/>
+	<ingredient name="carBattery" count="1"/>
+</recipe>
+
+<!-- TailorMade -->
+<recipe name="tshirtBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="12"/>
+</recipe>
+
+<recipe name="shirtBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="16"/>
+</recipe>
+
+<recipe name="denimShortsPantsBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="18"/>
+</recipe>
+
+<recipe name="brownDenimPants" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="26"/>
+</recipe>
+
+<recipe name="sweatshirtBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="24"/>
+</recipe>
+
+<recipe name="hoodedSweatshirtBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="30"/>
+</recipe>
+
+<recipe name="flannelShirtBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="20"/>
+</recipe>
+
+<recipe name="pufferCoatBrown" count="1" tags="learnable">
+	<ingredient name="resourceCloth" count="20"/>
+	<ingredient name="resourceFeather" count="15"/>
+</recipe>
+
+<recipe name="leatherDusterBlack" count="1" tags="learnable">
+	<ingredient name="resourceLeather" count="20"/>
+</recipe>
+
+<recipe name="cowboyHat" count="1" tags="learnable">
+	<ingredient name="resourceLeather" count="8"/>
+</recipe>
+
+<recipe name="gothicPants" count="1" tags="learnable">
+	<ingredient name="resourceLeather" count="10"/>
+	<ingredient name="resourceGlue" count="2"/>
+</recipe>
+
+<recipe name="gothBootsBlack" count="1" tags="learnable">
+	<ingredient name="resourceLeather" count="5"/>
+	<ingredient name="resourceGlue" count="2"/>
+</recipe>
+
+<!-- Adding Khaine's Lockpick Recipe -->
+<recipe name="toolLockpick" count="1" tags="learnable"> <!-- toolLockpick -->
+	<ingredient name="resourceScrapIron" count="10"/>
+	<ingredient name="resourceScrapBrass" count="10"/>
+</recipe>
+		
+<!-- Guppy's Placeable Light Mod -->
+<recipe name="handLanternGlass" count="1" craft_area="forge" material_based="true">
+	<ingredient name="unit_glass" count="5"/>
+</recipe>
+		
+<recipe name="handLanternCasing" count="1" craft_area="forge" material_based="true">
+	<ingredient name="unit_iron" count="15"/>
+</recipe>		
+		
+<recipe name="handLantern" count="1">
+	<ingredient name="handLanternCasing" count="1"/>
+	<ingredient name="handLanternGlass" count="1"/>
+	<ingredient name="resourceOil" count="1"/>
+</recipe>		
+
+<!-- Adobe Blocks -->
+<recipe name="resourceAdobe" count="1">
+	<ingredient name="resourceClayLump" count="1"/>
+	<ingredient name="resourceCrushedSand" count="1"/>
+</recipe>
+
+<recipe name="adobeWhiteBlock" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteRamp" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteCNRFull" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteCNRInside" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteCNRRamp" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhitePole" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhitePillar100" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhitePillar50" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhitePlate" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteArrowSlitHalf" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteWedge" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteWedgeTip" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<!--
+<recipe name="adobeWhiteArch" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteStairs25" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeWhiteStairs25CornerCNR" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+-->
+
+<recipe name="adobePeachBlock" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachRamp" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachCNRFull" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachCNRInside" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachCNRRamp" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachPole" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachPillar100" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachPillar50" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachPlate" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachArrowSlitHalf" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachWedge" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachWedgeTip" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<!--
+<recipe name="adobePeachArch" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachStairs25" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobePeachStairs25CornerCNR" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+-->
+
+<!--
+<recipe name="adobeTanBlock" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanRamp" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanCNRFull" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanCNRInside" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanCNRRamp" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanPole" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanPillar100" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanPillar50" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanPlate" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanArrowSlitHalf" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanWedge" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanWedgeTip" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanArch" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanStairs25" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+
+<recipe name="adobeTanStairs25CornerCNR" count="1">
+	<ingredient name="resourceAdobe" count="4"/>
+</recipe>
+-->
+
+<!-- Food -->
+<recipe name="foodSaltedMeat" count="1" craft_time="5">
+	<ingredient name="foodRottingFlesh" count="1"/>
+	<ingredient name="resourcePotassiumNitratePowder" count="2"/>
+</recipe>
+
+
+
+		
+    </append>
+</craftworx>

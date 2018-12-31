@@ -1,0 +1,1672 @@
+<craftworx>
+
+<!-- Increase stack sizes -->
+<set xpath="/items/item[contains(@name,'schematicMaster')]/property[@name='Stacknumber']/@value">5</set>
+<set xpath="/items/item[contains(@name,'resource')]/property[@name='Stacknumber' and @value='250']/@value">500</set>
+<set xpath="/items/item[contains(@name,'drinkJar')]/property[@name='Stacknumber' and @value='15']/@value">50</set>
+<set xpath="/items/item[contains(@name,'medical')]/property[@name='Stacknumber' and @value='10']/@value">20</set>
+<set xpath="/items/item[contains(@name,'medical')]/property[@name='Stacknumber' and @value='5']/@value">10</set>
+
+<!-- Change damage, degredation use, and attacksperminute based on quality -->
+<remove xpath="/items/item/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']"/>
+<remove xpath="/items/item/effect_group[@name='Base Effects']/passive_effect[@name='BlockDamage'][@operation='perc_add']"/>
+	
+<append xpath="/items/item/effect_group[@name='Base Effects']">
+	<passive_effect name="EntityDamage" operation="perc_add" value="0,.5" tier="1,9"/>
+	<passive_effect name="BlockDamage" operation="perc_add" value="0,2" tier="1,9"/>
+	<!--<passive_effect name="DegradationPerUse" operation="perc_add" value="0,-.1" tier="1,6"/>-->
+	<passive_effect name="AttacksPerMinute" operation="perc_add" value="0,.20" tier="1,6"/>
+	<passive_effect name="HarvestCount" operation="perc_add" value="0,.125"  tier="1,6"/>
+<!--		<passive_effect name="PhysicalDamageResist" operation="perc_add" value="0,.2"  tier="1,6"/>
+-->	
+</append>
+
+<!-- Change stamina loss based on quality -->
+<append xpath="/items/item/effect_group[@name='Base Effects']">
+	<passive_effect name="StaminaLoss" operation="perc_subtract" value="0,.15" tier="1,6"/>
+</append>
+<set xpath="/items/item/effect_group[@name='Power Attack']/passive_effect[@name='StaminaLoss']/@operation">base_set</set>
+
+<!-- +5% per quality level to max range, effective range, damage falloff, RPM, Reloading, spread, and handling -->
+<append xpath="/items/item[starts-with (@name,'gun')]/effect_group[@name='Base Effects']">
+	<passive_effect name="MaxRange" operation="perc_add" value="0,.25" tier="1,6"/>
+	<passive_effect name="DamageFalloffRange" operation="perc_add" value="0,.25" tier="1,6"/>
+	<passive_effect name="RoundsPerMinute" operation="perc_add" value="0,.25" tier="1,6"/>
+	<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="SpreadDegreesVertical" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="SpreadDegreesHorizontal" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="SpreadMultiplierRunning" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value="0,-.25" tier="1,6"/>
+	<passive_effect name="WeaponHandling" operation="perc_add" value="0,.25" tier="1,6"/>
+</append>
+
+<!-- Alter the Entity Damage in line with the original files-->
+<set xpath="/items/item[@name='gunAK47']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">-.2,.8</set>
+<set xpath="/items/item[@name='gunSMG5']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">-.2,.8</set>
+<set xpath="/items/item[@name='gunHuntingRifle']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.35,1.35</set>
+<set xpath="/items/item[@name='gunMR10']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.25,1.25</set>
+<set xpath="/items/item[@name='gunCompoundBow']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.3,1.3</set>
+<set xpath="/items/item[@name='gunCrossbow']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.45,1.45</set>
+<!-- Alter the Block Damage in line with the original files-->
+<set xpath="/items/item[@name='gunHuntingRifle']/effect_group[@name='Base Effects']/passive_effect[@name='EntityDamage'][@operation='perc_add']/@value">.35,2.35</set>
+
+<!-- Alter the Harvest amount based on type of item, i.e. Iron gets more than stone, Steel gets more than iron -->
+<set xpath="/items/item[@name='meleeToolHuntingKnife']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.15,.275</set>
+<set xpath="/items/item[@name='meleeToolClawHammer']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.15,.275</set>
+<set xpath="/items/item[@name='meleeToolPickaxeIron']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.15,.275</set>
+<set xpath="/items/item[@name='meleeToolShovelIron']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.15,.275</set>
+<set xpath="/items/item[@name='meleeToolFireaxeIron']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.15,.275</set>
+<set xpath="/items/item[@name='meleeToolMachete']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.3,.5</set>
+<set xpath="/items/item[@name='meleeToolWrench']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.3,.5</set>
+<set xpath="/items/item[@name='meleeToolPickaxeSteel']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.3,.5</set>
+<set xpath="/items/item[@name='meleeToolShovelSteel']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.3,.5</set>
+<set xpath="/items/item[@name='meleeToolFireaxeSteel']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.3,.5</set>
+<set xpath="/items/item[@name='meleeToolChainsaw']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.5,1</set>
+<set xpath="/items/item[@name='meleeToolAuger']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.5,1</set>
+
+<!-- Append existing items -->
+ <!-- <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltFlaming</append> -->
+ <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Flaming Crossbow Bolt</append>
+ <!-- <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrap</append>
+ <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrap</append> -->
+ <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
+ <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
+ <!-- End Append existing items -->
+
+<!-- Add new items -->
+<append xpath="/items">
+
+<!-- Scrap Iron Tools -->
+<item name="Scrap Iron Shiv"> <!-- meleeToolShivScrapIron -->
+	<property name="Tags" value="knife,melee,light,weapon,meleeWeapon,perkDeepCuts,perkTheHuntsman"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="36"/>
+	<property name="CustomIcon" value="meleeBoneShiv"/>
+	<property name="CustomIconTint" value="7C756E"/>
+	<property name="Meshfile" value="Items/Weapons/Melee/Knives/boneShivPrefab"/>
+	<property name="TintColor" value="230,105,32" />
+	<property name="Material" value="Mmetal"/>
+	<property name="EconomicValue" value="25"/>
+	<property name="SellableToTrader" value="true"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value="0.1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Damage_type" value="Slashing"/>
+		<property name="Sphere" value="0.1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="18"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="0" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.9" tags="metal"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="56"/>
+		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="50,100" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="18" tags="secondary"/> 
+
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self" invert="true"/>
+		</triggered_effect>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Ammo/Weapons"/>
+	<property name="DescriptionKey" value="Slightly better than the bone shiv for skinning animals. Not as good as an iron knife."/>
+	<property name="ActionSkillGroup" value="Blade Weapons"/>
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+</item>
+
+<item name="Scrap Iron Axe"> <!-- meleeToolFireaxeScrapIron -->
+	<property name="Tags" value="knife,melee,medium,tool,perkDeepCuts,perkMotherLode"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="17"/>
+	<property name="Meshfile" value="Items/Weapons/Melee/Axe/fireaxePrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="CustomIcon" value="meleeToolFireaxeIron" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="FuelValue" value="125"/>
+	<property name="EconomicValue" value="36"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Butcher" value="0" param1="4"/>
+		<property name="Sound_harvesting" value="open_animal" param1="organic"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.9"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="18"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="45"/>
+		<passive_effect name="HarvestCount" operation="base_set" value=".35" tags="butcherHarvest"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.2" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="29" tags="secondary"/>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Mining Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="DescriptionKey" value="Slightly better than the stone axe for chopping wood. Not as good as a real iron fireaxe."/>
+</item>
+
+<item name="Scrap Iron Pickaxe"> <!-- meleeToolPickaxeScrapIron -->
+	<property name="Tags" value="melee,medium,tool,perkMotherLode"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="12"/>
+	<property name="Meshfile" value="Items/Tools/pickaxe_ironPrefab"/>
+	<property name="CustomIcon" value="meleeToolPickaxeIron" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="Material" value="Mmetal"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="FuelValue" value="250"/>
+	<property name="EconomicValue" value="36"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.4"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="13"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="30"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="53"/> 
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.1" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="23" tags="secondary"/>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self"/>
+		</triggered_effect>
+		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player2painlg">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
+			<requirement name="IsMale" target="self" invert="true"/>
+		</triggered_effect>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Mining Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="PickupJournalEntry" value="miningTip"/>
+	<property name="DescriptionKey" value="Slightly better than the stone axe for mining. Not as good as a real iron pickaxe."/>
+</item>
+
+<item name="Scrap Iron Shovel"> <!-- meleeToolShovelScrapIron -->
+	<property name="Tags" value="melee,medium,tool,shovel,perkMotherLode"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="HoldType" value="18"/>
+	<property name="Meshfile" value="Items/Tools/stone_shovelPrefab"/>
+	<property name="CustomIcon" value="meleeToolShovelStone" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="Material" value="Mmetal"/>
+	<property name="RepairTools" value="resourceScrapIron"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="FuelValue" value="100"/>
+	<property name="EconomicValue" value="25"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>  
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.15"/>  
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="UsePowerAttackAnimation" value="true"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="3.4"/>
+		<passive_effect name="BlockRange" operation="base_set" value="4"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="12"/> 
+		<passive_effect name="BlockDamage" operation="base_set" value="40"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="18" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<effect_group name="Power Attack">
+		<passive_effect name="EntityDamage" operation="perc_add" value="1.4" tags="secondary"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="2.1" tags="secondary"/>
+		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/>
+		<passive_effect name="StaminaLoss" operation="base_add" value="22" tags="secondary"/>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Mining Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="PickupJournalEntry" value="miningTip"/>
+	<property name="DescriptionKey" value="Slightly better than the stone shovel for digging. Not as good as a real iron shovel."/>
+</item>
+
+<!-- Impact Wrench -->
+<item name="Impact Wrench">
+	<property name="Tags" value="blunt,melee,light,tool,perkStayDown,perkSalvageOperations"/>
+	<property name="CustomIcon" value="toolImpactWrench"/>
+	<property name="DisplayType" value="meleeRepairTool"/>
+	<property name="HoldType" value="37"/>
+	<property name="Meshfile" value="Items/Tools/nailgunPrefab"/>
+	<property name="TintColor" value="0,80,140"/>
+	<property name="Material" value="MmechanicalParts"/> <property name="Weight" value="27"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property name="CrosshairUpAfterShot" value="true"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property class="Action0">
+		<property name="Class" value="Ranged"/>
+		<property name="Hitmask_override" value="Melee"/>
+		<property name="UseMeleeCrosshair" value="true"/>
+		<property name="Magazine_items" value="ammoGasCan"/>
+		<property name="Bullet_material" value="metal"/>
+		<property name="Reload_time" value="4.1"/>
+		<property name="Single_magazine_usage" value="true"/>
+		<property name="Infinite_ammo" value="true"/>
+		<property name="Sound_start" value="impactWrench"/>
+<!--		<property name="Sound_start" value="impactWrench"/>
+		<property name="Sound_repeat" value="Weapons/Motorized/Auger/auger_fire_lp"/>
+		<property name="Sound_end" value="Weapons/Motorized/Auger/auger_fire_end"/>
+-->		<property name="Sound_empty" value="auger_empty"/>
+		<property name="Sound_reload" value="auger_reload"/>
+<!--		<property name="Particles_muzzle_smoke" value="nozzlesmoke_chainsaw"/>
+-->        <property name="DamageBonus.wood" value="-0.99"/>
+        <property name="DamageBonus.earth" value="-0.99"/>
+		<property name="DamageBonus.cloth" value="-0.99"/>
+        <property name="DamageBonus.stone" value="-0.99"/>
+		<property name="ToolCategory.Disassemble" value="1" param1="1"/>
+		<property name="SupportHarvesting" value="true"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+	</property>
+	
+<!--	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sound_start" value="nailgun_fire"/>
+		<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+		<property name="ToolCategory.Disassemble" value="1" param1="1"/>
+		<property name="Sound_harvesting" value="nailgun_fire"/>
+		<property name="Particle_harvesting" value="true" param1="metal"/>
+	</property>
+-->	<property class="Action1"> <!-- UseAction -->
+		<property name="Class" value="Repair"/>
+		<property name="Delay" value="0.73"/> <!-- Repair actions still need the delay amount -->
+		<property name="Repair_amount" value="200"/>
+		<property name="Upgrade_hit_offset" value="-3"/>
+		<property name="Repair_action_sound" value="impactWrench"/>
+		<property name="Upgrade_action_sound" value="impactWrench"/>
+		<property name="Allowed_upgrade_items" value="resourceScrapIron,resourceForgedIron,resourceForgedSteel"/>
+		<!--<property name="Restricted_upgrade_items" value="concrete"/>-->
+	</property>
+	<effect_group name="Base Effects">
+<!--	<passive_effect name="DamageFalloffRange" operation="base_set" value="3"/>-->
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="130"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1000"/>
+		<passive_effect name="KickDegreesVertical" operation="base_set" value="-.1,.1"/>
+		<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-.1,.1"/>
+		<display_value name="dRecoil" value="1" />
+		<passive_effect name="MagazineSize" operation="base_set" value="10"/>
+		
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value=".3"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value=".3"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".2"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".3"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value=".8"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1"/>
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2"/>
+		<passive_effect name="BlockRange" operation="base_set" value="5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="12.5"/> <!-- meleeToolWrench -->
+		<passive_effect name="BlockDamage" operation="base_set" value="25"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="200"/> <!-- A16 1.1 -->
+		<passive_effect name="HarvestCount" operation="base_set" value="1.5" tags="salvageHarvest"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="6.2" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="2500,6000" tier="1,6"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="5" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".15" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+	</effect_group>
+	<property name="Group" value="Tools/Traps"/>
+	<property name="ActionSkillGroup" value="Construction Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
+	<property name="RepairExpMultiplier" value="10.8"/>
+	<property name="EconomicValue" value="1000"/>
+</item>
+
+<!-- Modern Crossbow -->
+<!-- Not working currently as planned
+<item name="gunCrossbowModern">
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,bow,smallTopAttachments,mediumTopAttachments,xbowModernAttachments,perkArchery"/>
+	<property name="DisplayType" value="rangedBow"/>
+	<property name="HoldType" value="26"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/Crossbow/crossbowPrefab"/>
+	<property name="CustomIcon" value="gunCrossbow"/>
+	<property name="CustomIconTint" value="006699" />
+	<property name="TintColor" value="0,102,153" />
+	<property name="Material" value="Mmetal"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="FuelValue" value="200"/>
+	<property name="EconomicValue" value="275"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="CrosshairOnAim" value="true"/> 
+	<property name="CrosshairUpAfterShot" value="true"/> 
+	<property name="Sound_Sight_In" value="crossbow_sight_in"/>
+	<property name="Sound_Sight_Out" value="crossbow_sight_out"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property class="Action0">
+		<property name="Class" value="Launcher"/>
+		<property name="Hitmask_override" value="Arrow"/>
+		<property name="Delay" value="0.8"/> 
+		<property name="Magazine_items" value="ammoCrossbowBoltStone,ammoCrossbowBoltIron, ammoCrossbowBoltSteelAP, ammoCrossbowBoltExploding, ammoCrossbowBoltFlaming"/>
+		<property name="Sound_start" value="crossbow_fire"/>
+		<property name="Sound_repeat" value=""/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="weapon_empty"/>
+		<property name="Sound_reload" value="crossbow_reload"/>
+	</property>
+	<property class="Action1"> 
+		<property name="Class" value="Zoom"/>
+		<property name="Zoom_max_out" value="55"/>
+		<property name="Zoom_max_in" value="55"/>
+	</property>
+	<effect_group name="Base Effects"> 
+		<passive_effect name="ProjectileVelocity" operation="perc_add" value="0.5"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+		<passive_effect name="MaxRange" operation="base_set" value="100"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="3"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".3"/> 
+		<passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+		<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
+		<passive_effect name="ProjectileVelocity" operation="perc_add" value="0.5"/>
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3.35"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3.35"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".10"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2"/>
+		<passive_effect name="WeaponHandling" operation="base_set" value="0.5"/> 
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="75"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+		<passive_effect name="KickDegreesVertical" operation="base_set" value="2"/>
+		<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-1,1"/>
+		<display_value name="dRecoil" value="20" />
+		<passive_effect name="DegradationMax" operation="base_set" value="600,2350" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="2,5" tier="1,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+	</effect_group>
+	<property name="ActionSkillGroup" value="Archery"/>
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+	<property name="PickupJournalEntry" value="alternateAmmoTip"/>
+</item> -->
+
+<!-- Turd Launcher -->
+<item name="Turd Launcher"> <!-- gunTurdLauncher -->
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,sideAttachments,smallTopAttachments,perkArchery"/>
+	<property name="DisplayType" value="rangedBow"/>
+	<property name="HoldType" value="26"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/Crossbow/crossbowPrefab"/>
+	<property name="CustomIcon" value="gunTurdLauncher"/>
+	<property name="Material" value="Mwood" />
+    <property name="RepairTools" value="Mwood" />
+    <property name="FuelValue" value="40" />
+	<property name="EconomicValue" value="12" />
+	<property name="SellableToTrader" value="false"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="wooddestroy1"/>
+	<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+	<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+	<property name="Sound_Sight_In" value="crossbow_sight_in"/>
+	<property name="Sound_Sight_Out" value="crossbow_sight_out"/>
+    <property class="Action0">
+		<property name="Class" value="Launcher"/>
+		<property name="Delay" value="0.8" />
+        <property name="Magazine_items" value="Turd Bolt" /> <!-- ammoTurdBolt -->            
+	<!--	<property name="Reload_time" value="2.5" /> -->
+		<property name="Sound_start" value="crossbow_fire"/>
+		<property name="Sound_repeat" value=""/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="weapon_empty"/>
+		<property name="Sound_reload" value="crossbow_reload"/>
+    </property>
+	<property class="Action1"> 
+		<property name="Class" value="Zoom"/>
+		<property name="Zoom_max_out" value="55"/>
+		<property name="Zoom_max_in" value="55"/>
+	</property>
+	<effect_group name="Base Effects"> <!-- gunTurdLauncher -->
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="10"/>
+		<passive_effect name="MaxRange" operation="base_set" value="50"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value=".5"/> <!-- 3.4s -->
+
+		<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="3.35"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="3.35"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".10"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2"/>
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2"/>
+		<passive_effect name="WeaponHandling" operation="base_set" value="0.5"/> <!-- crosshair reset speed -->
+
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="50"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+		<passive_effect name="KickDegreesVertical" operation="base_set" value="2"/>
+		<passive_effect name="KickDegreesHorizontal" operation="base_set" value="-1,1"/>
+		<display_value name="dRecoil" value="20" />
+		<passive_effect name="DegradationMax" operation="base_set" value="50,250" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value="0.10" tags="EntityDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="40" tags="EconomicValue"/>
+	</effect_group>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="ActionSkillGroup" value="Archery"/>
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+	<property name="DescriptionKey" value="gunTurdLauncherDesc" />
+</item>
+
+<item name="Turd Bolt"> <!-- ammoTurdBolt -->
+	<property name="Tags" value="ranged,perkArchery"/>
+	<property name="DisplayType" value="ammoArrow"/>
+	<property name="Meshfile" value="Items/Crafting/clay" />
+	<property name="HandMeshfile" value="Items/Misc/crossbow_bolt_hand_stonePrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="ammoTurdBolt"/>
+	<property name="Material" value="Morganic" />
+    <property name="HoldType" value="40" />
+	<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value="0.05"/>
+    <property name="Stacknumber" value="250" />
+	<property name="FuelValue" value="5"/>
+	<property name="EconomicValue" value="6"/>
+	<property name="SellableToTrader" value="false"/>
+    <property class="Action1">
+        <property name="Class" value="Projectile" />
+        <property name="Explosion.ParticleIndex" value="0" />
+        <!-- no expl. -->
+		<property name="Gravity" value="-3"/>
+        <property name="FlyTime" value=".25" />
+        <property name="LifeTime" value="17" />
+        <property name="DamageBonus.head" value="2" />
+        <property name="DamageBonus.glass" value="4" />
+    </property>
+	<effect_group name="Base Effects" tiered="false"> <!-- ammoTurdBolt -->
+		<passive_effect name="EntityDamage" operation="base_set" value="10"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0.1" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="47.5"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0" tags="glass"/>
+	</effect_group>
+	
+	<property name="EconomicValue" value="2" />
+    <property name="Group" value="Ammo/Weapons" />
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+	<property name="DescriptionKey" value="ammoTurdBoltDesc" />
+</item>
+
+<!-- Ammunition -->
+<item name="Flaming Crossbow Bolt Schematic"> <!-- ammoCrossbowBoltFlamingSchematic -->
+	<property name="Extends" value="unlockBookMaster"/>
+	<property name="CustomIcon" value="ammoCrossbowBoltFlamingSchematic"/>
+	<property name="CreativeMode" value="Player"/>
+	<property class="Action0">
+		<property name="Recipes_to_learn" value="Flaming Crossbow Bolt" />
+	</property>
+	<property name="DescriptionKey" value="flamingBoltSchematicDesc" />
+</item>
+
+<item name="Flaming Crossbow Bolt"> <!-- ammoCrossbowBoltFlaming -->
+	<property name="Tags" value="ranged,perkArchery"/>
+	<property name="DisplayType" value="ammoArrow"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/WoodenBow/flamingArrowPrefab"/>
+	<property name="CustomIcon" value="ammoCrossbowBoltFlaming"/>
+	<property name="HoldType" value="45"/>
+	<property name="HandMeshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="StickyMeshFile" value="Items/Weapons/Ranged/Bows/WoodenBow/flamingArrowPrefab"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="UsableUnderwater" value="false"/>
+	<property name="Stacknumber" value="250"/> <!-- STK ammo -->
+	<property name="FuelValue" value="27"/>
+	<property name="EconomicValue" value="50"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="Damage_type" value="Heat"/>
+	<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value="0.7"/>
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.ParticleIndex" value="0"/> <!-- no expl. -->
+		<property name="FlyTime" value="0"/>
+		<property name="LifeTime" value="12"/>
+		<property name="Gravity" value="-5"/>
+		<property name="DamageBonus.wood" value="2"/>
+		<property name="Buff" value="buffBurningFlamingArrow"/>
+	</property>
+	<property class="Attributes">
+		<property name="GetQualityFromWeapon" value="true"/>
+	</property>
+	<effect_group name="Base Effects" tiered="false"> <!-- ammoBoltFlaming -->
+		<passive_effect name="EntityDamage" operation="base_set" value="35"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0.1" tags="wood" match_all_tags="true"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+		<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffBurningFlamingArrow"/>
+	</effect_group>
+	<property name="Group" value="Ammo/Weapons" />
+	<property name="DescriptionKey" value="ammoBoltFlamingDesc" />
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+</item>
+
+<item name="Scrap Arrow"> <!-- ammoArrowScrapIron -->
+	<property name="DisplayType" value="ammoArrow"/>
+	<property name="Tags" value="ranged,perkArchery"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/WoodenBow/Arrow"/>
+	<property name="HandMeshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="HoldType" value="45"/>
+	<property name="CustomIcon" value="ammoArrowScrapIron" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value="0.5"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="250"/> <!-- STK ammo -->
+	<property name="FuelValue" value="25"/>
+	<property name="EconomicValue" value="18"/>
+	<property name="EconomicBundleSize" value="5"/>
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.ParticleIndex" value="0"/>
+		<property name="FlyTime" value="0"/>
+		<property name="Gravity" value="-4"/>
+		<property name="LifeTime" value="12"/>
+	</property>
+	<property class="Attributes">
+		<property name="EntityDamage" value="19,31"/>
+		<property name="BlockDamage" value="2,4"/>
+		<property name="ApplyBuff" value="0.35,0.35" param1="arrowCriticalBleedout"/>
+	</property>
+	<effect_group name="Base Effects" tiered="false"> <!-- ammoArrowScrap -->
+		<passive_effect name="EntityDamage" operation="base_set" value="28"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="2"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0.1" tags="wood" match_all_tags="true"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="48"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0" tags="glass"/>
+	</effect_group>
+	<property name="Group" value="Ammo/Weapons,Basics"/>
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+</item>
+
+<!-- Junk Items -->
+<!-- item needed to scrap junk into -->
+<item name="junkItemMaster">
+	<property name="CreativeMode" value="None"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="HoldType" value="45"/>
+	<property name="Stacknumber" value="250"/>
+	<property name="Weight" value="5"/>
+	<property name="Group" value="Resources"/>
+	<property name="SellableToTrader" value="false"/>
+</item>
+	
+<!-- Junk Brass -->
+<item name="junkBrassHinge">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkBrassHinge"/>
+	<property name="DescriptionKey" value="junkBrassHingeDesc"/>
+	<property name="Material" value="Mbrass"/>
+	<property name="Weight" value="5"/> 
+</item>
+
+<item name="junkBrassKnuckles">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkBrassKnuckles"/>
+	<property name="DescriptionKey" value="junkBrassKnucklesDesc"/>
+	<property name="Material" value="Mbrass"/>
+	<property name="Weight" value="7"/> 
+</item>
+	
+<item name="junkBrassMonkey">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkBrassMonkey"/>
+	<property name="DescriptionKey" value="junkBrassMonkeyDesc"/>
+	<property name="Material" value="Mbrass"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkBrassCowBell">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkBrassCowBell"/>
+	<property name="DescriptionKey" value="junkBrassCowBellDesc"/>
+	<property name="Material" value="Mbrass"/>
+	<property name="Weight" value="5"/>
+</item>
+
+<!-- Junk Cloth -->
+<item name="junkClothTeddyBear">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkClothTeddyBearJZ"/>
+	<property name="DescriptionKey" value="junkClothTeddyBearDesc"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="Weight" value="5"/> 
+</item>
+	
+<item name="junkClothRags">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkClothRags"/>
+	<property name="DescriptionKey" value="junkClothRagsDesc"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="Weight" value="5"/> 
+</item>
+	
+<item name="junkClothRug">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkClothRug"/>
+	<property name="DescriptionKey" value="junkClothRugDesc"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="Weight" value="25"/>
+</item>
+	
+<item name="junkClothOldBlanket">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="CustomIcon" value="junkClothOldBlanket"/>
+	<property name="DescriptionKey" value="junkClothOldBlanketDesc"/>
+	<property name="Weight" value="10"/>
+</item>
+
+<!-- Junk Glass -->
+<item name="junkGlassPerfume">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkGlassPerfume"/>
+	<property name="DescriptionKey" value="junkGlassPerfumeDesc"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+</item>
+	
+<item name="junkGlassCompact">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkGlassCompact"/>
+	<property name="DescriptionKey" value="junkGlassCompactDesc"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+</item>
+	
+<item name="junkGlassFrame">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkGlassFrame"/>
+	<property name="DescriptionKey" value="junkGlassFrameDesc"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="10"/>
+</item>
+	
+<item name="junkGlassEye">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mglass"/>
+	<property name="CustomIcon" value="junkGlassEye"/>
+	<property name="DescriptionKey" value="junkGlassEyeDesc"/>
+	<property name="Weight" value="5"/> 
+</item>
+	
+<!-- Junk Iron -->
+<item name="junkIronScissors">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="CustomIcon" value="junkIronScissors"/>
+	<property name="DescriptionKey" value="junkIronScissorsDesc"/>
+	<property name="Weight" value="5"/>
+</item>
+	
+<item name="junkIronSoldier">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkIronSoldier"/>
+	<property name="DescriptionKey" value="junkIronSoldierDesc"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Weight" value="5"/> 
+</item>
+	
+<item name="junkIronPaperClips">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkIronPaperClips"/>
+	<property name="DescriptionKey" value="junkIronPaperClipsDesc"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkIronWeight">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkIronWeight"/>
+	<property name="DescriptionKey" value="junkIronWeightDesc"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Weight" value="50"/>
+</item>
+	
+<item name="junkIronHinge">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkIronHinge"/>
+	<property name="DescriptionKey" value="junkIronHingeDesc"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Weight" value="5"/> 
+</item>
+	
+<!-- Junk Lead -->
+<item name="junkLeadSolder">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkLeadSolder"/>
+	<property name="DescriptionKey" value="junkLeadSolderDesc"/>
+	<property name="Material" value="Mlead"/>
+	<property name="Weight" value="3"/> 
+</item>
+	
+<item name="junkLeadSoldier">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkLeadSoldier"/>
+	<property name="DescriptionKey" value="junkLeadSoldierDesc"/>
+	<property name="Material" value="Mlead"/>
+	<property name="Weight" value="3"/> 
+</item>
+	
+<!-- Junk Mechanical -->
+<item name="junkMechanicalKeyPad">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkMechanicalKeyPad"/>
+	<property name="DescriptionKey" value="junkMechanicalKeyPadDesc"/>
+	<property name="Material" value="MmechanicalParts"/>
+	<property name="Weight" value="10"/>
+</item>
+	
+<item name="junkMechanicalOldWatch">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkMechanicalOldWatch"/>
+	<property name="DescriptionKey" value="junkMechanicalOldWatchDesc"/>
+	<property name="Material" value="MmechanicalParts"/>
+	<property name="Weight" value="5"/>
+</item>
+	
+<item name="junkMechanicalTypeWriter">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkMechanicalTypeWriter"/>
+	<property name="DescriptionKey" value="junkMechanicalTypeWriterDesc"/>
+	<property name="Material" value="MmechanicalParts"/>
+	<property name="Weight" value="15"/>
+</item>
+	
+<!-- Junk Paper -->
+<item name="junkPaperPlayingCards">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkPaperPlayingCards"/>
+	<property name="DescriptionKey" value="junkPaperPlayingCardsDesc"/>
+	<property name="Material" value="Mpaper"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkPaperNews">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkPaperNews"/>
+	<property name="DescriptionKey" value="junkPaperNewsDesc"/>
+	<property name="Material" value="Mpaper"/>
+	<property name="Weight" value="5"/> 
+</item>
+	
+<item name="junkPaperToilet">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkPaperToilet"/>
+	<property name="DescriptionKey" value="junkPaperToiletDesc"/>
+	<property name="Material" value="Mpaper"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkPaperMatches">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mpaper"/>
+	<property name="CustomIcon" value="junkPaperMatches"/>
+	<property name="DescriptionKey" value="junkPaperMatchesDesc"/>
+	<property name="Weight" value="3"/> 
+</item>
+	
+<!-- Junk Plastic -->
+<item name="junkPlasticCds">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkPlasticCds"/>
+	<property name="DescriptionKey" value="junkPlasticCdsDesc"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkPlasticSoldier">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkPlasticSoldier"/>
+	<property name="DescriptionKey" value="junkPlasticSoldierDesc"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkPlasticBricks">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkPlasticBricks"/>
+	<property name="DescriptionKey" value="junkPlasticBricksDesc"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="Weight" value="2"/>
+</item>
+
+<item name="junkPlasticHairBrush">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="CustomIcon" value="junkPlasticHairBrush"/>
+	<property name="DescriptionKey" value="junkPlasticHairBrushDesc"/>
+	<property name="Weight" value="2"/>
+</item>
+	
+<item name="junkPlasticFrisbee">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="CustomIcon" value="junkPlasticFrisbee"/>
+	<property name="DescriptionKey" value="junkPlasticFrisbeeDesc"/>
+	<property name="Weight" value="3"/>
+</item>
+	
+<item name="junkPlasticKite">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="CustomIcon" value="junkPlasticKite"/>
+	<property name="DescriptionKey" value="junkPlasticKiteDesc"/>
+	<property name="Weight" value="2"/>
+</item>
+	
+<item name="junkPlasticToothBrush">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="CustomIcon" value="junkPlasticToothBrush"/>
+	<property name="DescriptionKey" value="junkPlasticToothBrushDesc"/>
+	<property name="Weight" value="2"/>
+</item>
+	
+<item name="junkPlasticShoppingBag">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mplastics"/>
+	<property name="CustomIcon" value="junkPlasticShoppingBag"/>
+	<property name="DescriptionKey" value="junkPlasticShoppingBagDesc"/>
+	<property name="Weight" value="2"/>
+</item>
+
+<!-- Junk Wood -->
+<item name="junkWoodSoldier">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkWoodSoldier"/>
+	<property name="DescriptionKey" value="junkWoodSoldierDesc"/>
+	<property name="Material" value="Mwood"/>
+	<property name="Weight" value="5"/>
+</item>
+	
+<item name="junkWoodWhistle">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkWoodWhistle"/>
+	<property name="DescriptionKey" value="junkWoodWhistleDesc"/>
+	<property name="Material" value="Mwood"/>
+	<property name="Weight" value="5"/>
+</item>
+	
+<item name="junkWoodSpoon">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="CustomIcon" value="junkWoodSpoon"/>
+	<property name="DescriptionKey" value="junkWoodSpoonDesc"/>
+	<property name="Material" value="Mwood"/>
+	<property name="Weight" value="5"/>
+</item>
+	
+<item name="junkWoodYoyo">
+	<property name="Extends" value="junkItemMaster"/>
+	<property name="Material" value="Mwood"/>
+	<property name="CustomIcon" value="junkWoodYoyo"/>
+	<property name="DescriptionKey" value="junkWoodYoyoDesc"/>
+	<property name="Weight" value="5"/>
+</item>
+
+<!-- TailorMade items -->
+<item name="brownDenimPants">
+	<property name="Tags" value="lowerbody,legs,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="Weight" value="30"/>
+	<property name="FuelValue" value="6"/>
+	<property name="EconomicValue" value="40"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="denimPants"/>
+	<property name="CustomIconTint" value="150,120,90"/>
+	<property name="EquipSlot" value="Legs"/>
+	<property class="UMA">
+		<property name="Mesh" value="clothes_denim_pants"/>
+		<property name="Overlay0" value="pants_01"/>
+		<property name="Overlay0Tint" value="150,120,90"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="legs" param1="inner"/>
+		<property name="UISlot" value="Pants"/>
+	</property>
+	<property name="DescriptionKey" value="denimClothesGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="4"/>
+	</effect_group>
+</item>
+
+<item name="shirtBrown"> 
+	<property name="Tags" value="upperbody,chest,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="Weight" value="20"/>
+	<property name="FuelValue" value="4"/>
+	<property name="EconomicValue" value="40"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="shirt"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property name="EquipSlot" value="Chest"/>
+	<property class="UMA">
+		<property name="Mesh" value="shirt"/>
+		<property name="Overlay0" value="shirt"/>
+		<property name="Overlay0Tint" value="132,105,84"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="chest" param1="inner"/>
+		<property name="UISlot" value="Shirt"/>
+	</property>
+	<property name="DescriptionKey" value="shirtClothesGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="4"/>
+	</effect_group>
+</item>
+
+<item name="pufferCoatBrown">
+	<property name="Tags" value="upperbody,chest,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Waterproof" value="0.45"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="Weight" value="30"/>
+	<property name="FuelValue" value="6"/>
+	<property name="EconomicValue" value="450"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="pufferCoat"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property name="EquipSlot" value="Chest"/>
+	<property class="UMA">
+		<property name="Mesh" value="coats_puffer_coat"/>
+		<property name="Overlay0" value="coat_puffer_coat"/>
+		<property name="Overlay0Tint" value="132,105,84"/>
+		<property name="Layer" value="3"/>
+		<property name="UISlot" value="Jacket"/>
+		<property name="Mask0" value="hands" param1="outer"/>
+		<property name="Mask1" value="chest" param1="middle"/>
+	</property>
+	<property name="DescriptionKey" value="pufferCoatGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="25"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="2"/>
+	</effect_group>
+</item>
+
+<item name="sweatshirtBrown"> 
+	<property name="Tags" value="upperbody,chest,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="Weight" value="25"/>
+	<property name="FuelValue" value="5"/>
+	<property name="EconomicValue" value="60"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="sweatshirt"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property name="EquipSlot" value="Chest"/>
+	<property class="UMA">
+		<property name="Mesh" value="sweatshirt"/>
+		<property name="Overlay0" value="sweatshirt"/>
+		<property name="Overlay0Tint" value="132,105,84"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="chest" param1="inner"/>
+		<property name="UISlot" value="Shirt"/>
+	</property>
+	<property name="DescriptionKey" value="shirtClothesGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="9"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="2"/>
+	</effect_group>
+</item>
+
+<item name="tshirtBrown"> 
+	<property name="Tags" value="upperbody,chest,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="Weight" value="20"/>
+	<property name="FuelValue" value="4"/>
+	<property name="EconomicValue" value="40"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="tshirt"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property name="EquipSlot" value="Chest"/>
+	<property class="UMA">
+		<property name="Mesh" value="base_chest"/>
+		<property name="Overlay0" value="torso"/>
+		<property name="Overlay0Tint" value="skin"/>
+		<property name="Overlay1" value="tshirt"/>
+		<property name="Overlay1Tint" value="132,105,84"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="chest" param1="inner"/>
+		<property name="UISlot" value="Shirt"/>
+	</property>
+	<property name="DescriptionKey" value="tshirtClothesGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="9"/>
+	</effect_group>
+</item>
+
+<item name="denimShortsPantsBrown">
+	<property name="Tags" value="upperbody,legs,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="Weight" value="30"/>
+	<property name="FuelValue" value="6"/>
+	<property name="EconomicValue" value="40"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="denimShortsPants"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property name="EquipSlot" value="Legs"/>
+	<property class="UMA">
+		<property name="Mesh" value="base_legs"/>
+		<property name="Overlay0" value="legs"/>
+		<property name="Overlay0Tint" value="skin"/>
+		<property name="Overlay1" value="shorts"/>
+		<property name="Overlay1Tint" value="132,105,84"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="legs" param1="inner"/>
+		<property name="UISlot" value="Pants"/>
+	</property>
+	<property name="DescriptionKey" value="denimClothesGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="3"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="9"/>
+	</effect_group>
+</item>
+
+<item name="hoodedSweatshirtBrown">
+	<property name="Tags" value="upperbody,chest,clothing"/>
+	<property name="DisplayType" value="clothing"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="Material" value="Mcloth"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="Weight" value="25"/>
+	<property name="FuelValue" value="5"/>
+	<property name="EconomicValue" value="60"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="hoodedSweatshirt"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property name="EquipSlot" value="Chest"/>
+	<property class="UMA">
+		<property name="Mesh" value="hoody"/>
+		<property name="Overlay0" value="hoody"/>
+		<property name="Overlay0Tint" value="132,105,84"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="chest" param1="inner"/>
+		<property name="Mask1" value="Head" param1="inner"/>
+		<property name="Mask2" value="Head" param1="middle"/>
+		<property name="Mask3" value="Head" param1="outer"/>
+		<property name="UISlot" value="Shirt"/>
+	</property>
+	<property name="DescriptionKey" value="shirtClothesGroupDesc"/>
+	<property name="Group" value="Clothing"/>
+	<property name="ActionSkillGroup" value="Clothing/Armor"/>
+	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="14"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="2"/>
+	</effect_group>
+</item>
+
+<item name="flannelShirtBrown">
+	<property name="Extends" value="sweatshirt"/>
+	<property name="Tags" value="upperbody,chest,clothing"/>
+	<property name="CustomIcon" value="flannelShirt"/>
+	<property name="CustomIconTint" value="132,105,84"/>
+	<property class="UMA">
+		<property name="Mesh" value="plaid_shirt"/>
+		<property name="Overlay0" value="plaid_shirt"/>
+		<property name="Overlay0Tint" value="132,105,84"/>
+		<property name="Overlay2" value="unisex_plaid_shirt_overlay"/>
+		<property name="Overlay2Tint" value="255,255,255"/>
+		<property name="Layer" value="0"/>
+		<property name="Mask0" value="chest" param1="inner"/>
+		<property name="UISlot" value="Shirt"/>
+	</property>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="6"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="2"/>
+	</effect_group>
+</item>
+
+<!-- Miscellaneous Items -->
+<item name="refinedCoal">
+	<property name="Meshfile" value="Items/Misc/sackPrefab" />
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
+	<property name="Material" value="Mcoal"/>
+	<property name="HoldType" value="45" />
+	<property name="Stacknumber" value="500" /> 
+	<property name="FuelValue" value="900" />
+	<property name="EconomicValue" value="250" />
+	<property name="EconomicBundleSize" value="5"/>
+	<property name="Group" value="Resources" />
+	<property name="DescriptionKey" value="refinedCoalDesc" />
+	<property name="CraftingIngredientTime" value="1"/>
+</item>
+
+<item name="resourceTurd">
+	<property name="Meshfile" value="Items/Crafting/clayPrefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="HoldType" value="40"/>
+	<property name="Stacknumber" value="250"/> <!-- STK resource -->
+	<property name="EconomicValue" value="10"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="Group" value="Resources"/>
+	<property class="Action0"> <!-- AttackAction -->
+		<property name="Class" value="ThrowAway"/>
+		<property name="Delay" value="1.2"/>
+		<!-- <property name="DamageBlock" value="5010"/>
+		<property name="DamageEntity" value="1000"/> Does not work on class Thrown -->
+		<property name="Throw_strength_default" value="10"/>
+		<property name="Throw_strength_max" value="35"/>
+		<property name="Max_strain_time" value="1"/>
+		<property name="Sound_start" value="swoosh"/>
+	</property>
+	<property name="CraftingIngredientTime" value="750"/>
+</item>
+
+<item name="resourceAdobe">
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Material" value="MresourceAdobe"/>
+	<property name="Weight" value="5"/>
+	<property name="Stacknumber" value="1000"/> <!-- STK resource -->
+	<property name="EconomicValue" value="10"/>
+	<property name="EconomicBundleSize" value="100"/>
+	<property name="Group" value="Resources"/>
+</item>
+
+<!-- Khaine's lockpick -->
+<item name="toolLockpick">	<!-- toolLockpick --> -->
+	<property name="CustomIcon" value="toolLockpick" />
+	<property name="DisplayType" value="adminRanged"/>
+	<property name="HoldType" value="1"/>
+	<property name="Meshfile" value="Items/Weapons/Melee/Knives/boneShivPrefab"/>
+	<property name="TintColor" value="48,48,48" />
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="20"/>
+	<property name="DegradationBreaksAfter" value="true"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property name="CrosshairUpAfterShot" value="true"/>
+	<property name="CrosshairOnAim" value="true"/>
+	<!-- <property class="Action0">
+		<property name="Class" value="Repair"/>
+		<property name="Delay" value="1"/> 
+		<property name="Repair_amount" value="100"/>
+		<property name="Upgrade_hit_offset" value="0"/>
+		<property name="Sound_start" value="repair_block"/>
+		<property name="Allowed_upgrade_items" value="toolLockpick"/>
+		<property name="UsePowerAttackAnimation" value="false"/>
+	</property> -->
+	<property class="Action1"> 
+		<property name="Class" value="Repair"/>
+		<property name="Delay" value="1"/> 
+		<property name="Repair_amount" value="100"/>
+		<property name="Upgrade_hit_offset" value="0"/>
+		<property name="Sound_start" value="repair_block"/>
+		<property name="Allowed_upgrade_items" value="toolLockpick"/>
+		<property name="UsePowerAttackAnimation" value="false"/>
+	</property>
+	<effect_group name="Base Effects" tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="MaxRange" operation="base_set" value="200"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="6000"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
+	</effect_group>
+	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="ActionSkillGroup" value="Construction Tools"/>
+	<property name="CraftingSkillGroup" value="craftSkillTools"/>
+	<property name="RepairExpMultiplier" value="5.5"/>
+</item>	
+
+<!-- Guppy's Placeable Light Mod -->
+<item name="handLantern">
+	<property name="Tags" value="weapon,perkExplosiveWeapons"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="Class" value="ItemClassTimeBomb"/>
+	<property name="HoldType" value="12"/>
+	<property name="Meshfile" value="#@modfolder:Resources/GuppysLightSystem.unity3d?GuppyLanternItem.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/GuppysLightSystem.unity3d?GuppyLanternItem.prefab"/>
+	<property name="DropScale" value="2"/>
+	<property name="CustomIcon" value="handLantern" />
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="50"/> <!-- STK torch -->
+	<property name="FuelValue" value="25"/>
+	<property name="EconomicValue" value="10"/>
+	<property name="SoundIdle" value="torch_lp"/>
+	<property name="ThrowableDecoy" value="true"/>	
+	<property name="Weight" value="0"/>
+	<property name="FuelValue" value="60"/>
+	<property name="Explosion.BlockDamage" value="5"/>
+	<property name="Explosion.EntityDamage" value="5"/>
+	<property name="Explosion.ParticleIndex" value="10"/>
+	<property name="Explosion.RadiusBlocks" value="3"/>
+	<property name="Explosion.RadiusEntities" value="4"/>
+	<property name="Explosion.RadiusBuffs" value="3"/> <!-- int, default is same as RadiusBlocks -->
+	<property name="Explosion.BlastPower" value="70"/>
+	<property name="Explosion.DamageBonus.stone" value="0.1"/>
+	<property name="Explosion.DamageBonus.metal" value="0"/>
+	<property name="Explosion.DamageBonus.earth" value="0"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.DamageBonus.wood" value="6"/>
+	<property name="FuseTime" value="20000"/> <!-- theoretically redundant but I don't want to experiment on this -->
+	<property name="ExplodeOnHit" value="true"/>		
+	<property class="Action0">
+		<property name="Class" value="ThrowAway"/>
+		<property name="Delay" value="1.2"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Throw_strength_default" value="10"/>
+		<property name="Throw_strength_max" value="35"/>
+		<property name="Max_strain_time" value="1"/>
+		<property name="Sound_start" value="swoosh"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Delay" value="0.5"/>
+		<property name="Blockname" value="PlaceableLanternBlock"/>
+	</property>
+	<property name="Group" value="Basics,Decor/Miscellaneous"/>
+	<property name="LightValue" value="0.35"/>
+	<property name="LightSource" value="lightSource"/>
+	<property name="ActivateObject" value="lightSource"/>
+	<property name="AlwaysActive" value="true"/>
+	<property name="DistractionTags" value="zombie,requires_contact"/>
+	<effect_group name="Base Effects" tiered="false">
+		<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="4" buff="buffBurningMolotov"/>
+		<display_value name="ExRadius" value="4" />	
+	
+	</effect_group>
+</item>		
+
+<item name="handLanternGlass">
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="handLanternGlass" />
+	<property name="Material" value="Mglass"/>
+	<property name="Weight" value="1"/>
+	<property name="Stacknumber" value="50"/> <!-- STK resource -->
+	<property name="EconomicValue" value="10"/>
+	<property name="EconomicBundleSize" value="10"/>
+	<property name="Group" value="Resources"/>
+	<property name="RepairTime" value="0.5"/>
+	<property name="RepairAmount" value="20"/>
+	<property name="CraftingIngredientTime" value="0.2"/>
+</item>
+
+<item name="handLanternCasing">
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="handLanternCasing" />
+	<property name="Material" value="Miron_scrap"/>
+	<property name="Weight" value="5"/>
+	<property name="Stacknumber" value="50"/> <!-- STK resource -->
+	<property name="EconomicValue" value="10"/>
+	<property name="EconomicBundleSize" value="10"/>
+	<property name="Group" value="Resources"/>
+	<property name="RepairTime" value="0.5"/>
+	<property name="RepairAmount" value="20"/>
+	<property name="CraftingIngredientTime" value="0.2"/>
+</item>		
+		
+<item name="handFlashlight">
+	<property name="Tags" value="blunt,melee,light,tool"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="Class" value="ItemClassTorch"/>
+	<property name="HoldType" value="12"/>
+	<property name="Meshfile" value="#@modfolder:Resources/GuppysLightSystem.unity3d?GuppysFlashlight.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/GuppysLightSystem.unity3d?GuppysFlashlight.prefab"/>
+	<property name="CustomIcon" value="PlaceableBuildersLight" />
+	<property name="DropScale" value="1"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="50"/> <!-- STK torch -->
+	<property name="FuelValue" value="25"/>
+	<property name="EconomicValue" value="10"/>
+	<property name="SoundIdle" value="torch_lp"/>
+	<property class="Action0">
+		<property name="Class" value="ThrowAway"/>
+		<property name="Delay" value="1.2"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Throw_strength_default" value="10"/>
+		<property name="Throw_strength_max" value="35"/>
+		<property name="Max_strain_time" value="1"/>
+		<property name="Sound_start" value="swoosh"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="PlaceAsBlock"/>
+		<property name="Delay" value="0.5"/>
+		<property name="Blockname" value="PlaceableFlashLight"/>
+	</property>
+	<property name="Group" value="Basics,Decor/Miscellaneous"/>
+	<!--
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="10"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="0" tags="allToolsHarvest"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="65"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="125,250" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	-->
+</item>
+
+<!-- Monocular -->
+<!--
+<item name="toolMonocular"> 
+	<property name="Meshfile" value="Items/Tools/flashlight02Prefab" />
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
+	<property name="CustomIcon" value="toolMonocular" />
+	<property name="HoldType" value="13" />
+	<property name="Material" value="Mglass"/> 
+	<property name="Weight" value="5"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="Stacknumber" value="1" />
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value="0.1"/>
+		<property name="Sound_start" value="swoosh"/>
+		<property name="ToolCategory.harvestingTools" value=".5" param1="1"/>
+	</property>
+	<property class="Action1">
+		<property name="Class" value="Zoom"/>
+		<property name="Zoom_overlay" value="Items/Weapons/HUD/sniper_zoom_overlay"/>
+		<property name="Zoom_max_out" value="30"/>
+		<property name="Zoom_max_in" value="20"/>
+	</property>
+	<effect_group name="Base Effects">
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="2.5"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="10"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="4"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="0" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+		<passive_effect name="HarvestCount" operation="base_set" value="0" tags="allToolsHarvest"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="65"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="12.1" tags="primary"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="125,350" tier="1,6"/>
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+	</effect_group>
+	<property name="EconomicValue" value="150" />
+	<property name="Group" value="Tools/Traps"/>
+	<property name="DescriptionKey" value="toolMonocularDesc"/>
+</item>
+-->
+
+<!-- Food -->
+<item name="foodSaltedMeat">
+	<property name="HoldType" value="31"/>
+	<property name="DisplayType" value="food"/>
+	<property name="Meshfile" value="Items/Misc/parcelPrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="50"/> <!-- STK food -->
+	<property name="EconomicValue" value="12" />
+	<property name="EconomicBundleSize" value="3"/>
+	<property name="SellableToTrader" value="true"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_eating"/>
+	</property>
+	<property name="Group" value="Food/Cooking" />
+	<property name="DescriptionKey" value="saltedMeatDesc" />
+	
+	<effect_group tiered="false">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
+		
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffIllFoodPoisoning0">
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="10"/>
+		</triggered_effect>
+		<display_value name="FoodPoisoningRisk" value=".1" />
+	</effect_group>
+</item>
+
+<!-- Test this item -->
+		<item name="crossbowRepeater">
+			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,bow,smallTopAttachments,mediumTopAttachments,perkArchery"/>
+			<property name="DisplayType" value="rangedBow"/>
+			<property name="HoldType" value="26"/>
+			<property name="Meshfile" value="Items/Weapons/Ranged/Bows/Crossbow/crossbowPrefab"/>
+			<property name="Material" value="Mmetal"/>
+			<property name="RepairTools" value="resourceForgedIron"/>
+			<property name="FuelValue" value="200"/>
+			<property name="EconomicValue" value="220"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
+			<property name="Sound_Sight_In" value="crossbow_sight_in"/>
+			<property name="Sound_Sight_Out" value="crossbow_sight_out"/>
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="ActionSkillGroup" value="Archery"/>
+			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+			<property name="RepairExpMultiplier" value="5.5"/>
+			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
+			<property class="Action0">
+				<property name="Class" value="Launcher"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value="0.8"/> 
+				<property name="Magazine_items" value="ammoCrossbowBoltStone,ammoCrossbowBoltIron, ammoCrossbowBoltSteelAP, ammoCrossbowBoltExploding"/>				
+				<property name="Sound_start" value="crossbow_fire"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value="weapon_empty"/>
+				<property name="Sound_reload" value="crossbow_reload"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Zoom"/>
+				<property name="Zoom_max_out" value="55"/>
+				<property name="Zoom_max_in" value="55"/>
+			</property>
+			<effect_group name="Base Effects"> <!-- gunCrossbow -->
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value="0.5"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="MaxRange" operation="base_set" value="130"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5"/> <!-- 3.4s -->
+				<passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="ProjectileVelocity" operation="perc_add" value="1.2"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0.35"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0.35"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".10"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".3"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="0.45"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.2"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1"/>
+				<passive_effect name="WeaponHandling" operation="base_set" value="0.5"/> <!-- crosshair reset speed -->
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="85"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="KickDegreesVertical" operation="base_set" value="0"/>
+				<passive_effect name="KickDegreesHorizontal" operation="base_set" value="0"/>
+				<display_value name="dRecoil" value="0" />
+				<passive_effect name="DegradationMax" operation="base_set" value="800,5350" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.25" tags="EntityDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
+			</effect_group>
+		</item>		
+
+</append>
+	
+</craftworx>
+
+
+

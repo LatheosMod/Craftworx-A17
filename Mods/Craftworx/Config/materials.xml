@@ -1,0 +1,28 @@
+<craftworx>
+
+<append xpath="/materials">
+
+<material id="Madobe">
+	<property name="damage_category" value="stone"/>
+	<property name="surface_category" value="stone"/>
+	<property name="forge_category" value="stone"/>
+	<property name="Hardness" type="float" value="1"/>
+	<property name="stepsound" value="stone"/>
+	<property name="stability_glue" value="120"/>
+	<property name="Mass" type="int" value="10"/>
+	<property name="MaxDamage" value="1250"/>
+	<property name="Experience" value="1"/>
+</material>
+
+<material id="MresourceAdobe">
+	<property name="damage_category" value="earth"/>
+	<property name="surface_category" value="earth"/>
+	<property name="forge_category" value="clay"/>
+	<property name="Experience" value=".8"/>
+</material>
+
+</append>
+
+
+
+</craftworx>
