@@ -69,12 +69,34 @@
 
 <!-- Append existing items -->
  <!-- <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltFlaming</append> -->
- <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Flaming Crossbow Bolt</append>
+<append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Flaming Crossbow Bolt</append>
  <!-- <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrap</append>
  <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrap</append> -->
- <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
- <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
- <!-- End Append existing items -->
+<append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
+<append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
+
+<!-- Add empty jar to some food items when used -->
+<!-- Not currently working
+<append xpath="/items/item[@name='foodBoiledMeat']">
+	<property name="Create_item" value="drinkJarEmpty"/>
+</append>
+
+<append xpath="/items/item[@name='foodMeatStew']">
+	<property name="Create_item" value="drinkJarEmpty"/>
+</append>
+
+<append xpath="/items/item[@name='foodHoboStew']">
+	<property name="Create_item" value="drinkJarEmpty"/>
+</append>
+
+<append xpath="/items/item[@name='foodEggBoiled']">
+	<property name="Create_item" value="drinkJarEmpty"/>
+</append>
+
+<append xpath="/items/item[@name='foodVegetableStew']">
+	<property name="Create_item" value="drinkJarEmpty"/>
+</append>
+-->
 
 <!-- Add new items -->
 <append xpath="/items">
@@ -1430,7 +1452,8 @@
 		<property name="Delay" value="0.5"/>
 		<property name="Blockname" value="PlaceableLanternBlock"/>
 	</property>
-	<property name="Group" value="Basics,Decor/Miscellaneous"/>
+	<property name="Group" value="Tools/Traps"/>
+	<property name="CraftingSkillGroup" value="craftSkillScience"/>
 	<property name="LightValue" value="0.35"/>
 	<property name="LightSource" value="lightSource"/>
 	<property name="ActivateObject" value="lightSource"/>
@@ -1502,7 +1525,7 @@
 		<property name="Delay" value="0.5"/>
 		<property name="Blockname" value="PlaceableFlashLight"/>
 	</property>
-	<property name="Group" value="Basics,Decor/Miscellaneous"/>
+	<property name="Group" value="Basics,Tools/Traps"/>
 	<!--
 	<effect_group name="Base Effects">
 		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
@@ -1597,72 +1620,6 @@
 	</effect_group>
 </item>
 
-<!-- Test this item -->
-		<item name="crossbowRepeater">
-			<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,bow,smallTopAttachments,mediumTopAttachments,perkArchery"/>
-			<property name="DisplayType" value="rangedBow"/>
-			<property name="HoldType" value="26"/>
-			<property name="Meshfile" value="Items/Weapons/Ranged/Bows/Crossbow/crossbowPrefab"/>
-			<property name="Material" value="Mmetal"/>
-			<property name="RepairTools" value="resourceForgedIron"/>
-			<property name="FuelValue" value="200"/>
-			<property name="EconomicValue" value="220"/>
-			<property name="DegradationBreaksAfter" value="false"/>
-			<property name="SoundJammed" value="ItemNeedsRepair"/>
-			<property name="SoundDestroy" value="wooddestroy1"/>
-			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
-			<property name="CrosshairUpAfterShot" value="false"/> <!-- aimTest -->
-			<property name="Sound_Sight_In" value="crossbow_sight_in"/>
-			<property name="Sound_Sight_Out" value="crossbow_sight_out"/>
-			<property name="Group" value="Ammo/Weapons"/>
-			<property name="ActionSkillGroup" value="Archery"/>
-			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
-			<property name="RepairExpMultiplier" value="5.5"/>
-			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
-			<property class="Action0">
-				<property name="Class" value="Launcher"/>
-				<property name="Hitmask_override" value="Arrow"/>
-				<property name="Delay" value="0.8"/> 
-				<property name="Magazine_items" value="ammoCrossbowBoltStone,ammoCrossbowBoltIron, ammoCrossbowBoltSteelAP, ammoCrossbowBoltExploding"/>				
-				<property name="Sound_start" value="crossbow_fire"/>
-				<property name="Sound_repeat" value=""/>
-				<property name="Sound_end" value=""/>
-				<property name="Sound_empty" value="weapon_empty"/>
-				<property name="Sound_reload" value="crossbow_reload"/>
-			</property>
-			<property class="Action1"> <!-- UseAction -->
-				<property name="Class" value="Zoom"/>
-				<property name="Zoom_max_out" value="55"/>
-				<property name="Zoom_max_in" value="55"/>
-			</property>
-			<effect_group name="Base Effects"> <!-- gunCrossbow -->
-				<passive_effect name="ProjectileVelocity" operation="perc_add" value="0.5"/>
-				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
-				<passive_effect name="MaxRange" operation="base_set" value="130"/>
-				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
-				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1.5"/> <!-- 3.4s -->
-				<passive_effect name="EntityDamage" operation="perc_add" value=".45"/>
-				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
-				<passive_effect name="ProjectileVelocity" operation="perc_add" value="1.2"/>
-				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0.35"/>
-				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0.35"/>
-				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".10"/>
-				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".3"/>
-				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="0.45"/>
-				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1.2"/>
-				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1"/>
-				<passive_effect name="WeaponHandling" operation="base_set" value="0.5"/> <!-- crosshair reset speed -->
-				<passive_effect name="RoundsPerMinute" operation="base_set" value="85"/>
-				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
-				<passive_effect name="KickDegreesVertical" operation="base_set" value="0"/>
-				<passive_effect name="KickDegreesHorizontal" operation="base_set" value="0"/>
-				<display_value name="dRecoil" value="0" />
-				<passive_effect name="DegradationMax" operation="base_set" value="800,5350" tier="1,6"/>
-				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
-				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.25" tags="EntityDamage"/>
-				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
-			</effect_group>
-		</item>		
 
 </append>
 	

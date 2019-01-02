@@ -1,4 +1,4 @@
-<configs>
+<craftworx>
 
 <!-- Increase starter quest xp rewards -->
 	<set xpath="/quests/quest[@id='quest_BasicSurvival1']/reward[@type='Exp']/@value">200</set>
@@ -43,4 +43,4 @@
 	<set xpath="/quests/quest[@id='tier6_fetch_clear']/reward[@type='Exp']/@value">7000</set>
 	<set xpath="/quests/quest[@id='tier6_hidden_clear']/reward[@type='Exp']/@value">8000</set>
 
-</configs>
+</craftworx>

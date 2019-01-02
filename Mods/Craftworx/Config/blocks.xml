@@ -1028,6 +1028,316 @@
 	<property name="CanPickup" value="true"/>
 </append>
 
+<!-- Add chance to harvest feathers and eggs from trees -->
+<append xpath="/blocks/block[@name='treeJuniper4m']"> <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<!--
+<append xpath="/blocks/block[@name='treeBirch10m']">  
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append> 
+
+
+<append xpath="/blocks/block[@name='treeBirch12m']"> 
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeBirch15m']">  
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+-->
+
+<append xpath="/blocks/block[@name='treeDeadTree01']">  <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treeDeadTree02']">  <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treeOakSml01']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treeOakMed01']">   <!-- medium tree -->
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeOakMed02']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeOakLrg01']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedOak08m']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedOak16m']">   <!-- medium tree -->
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedOak27m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedOak41m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlainsTree2']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPine12m']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPine19m']">   <!-- medium tree -->
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPine27m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPine31m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPine41m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPine48m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMountainPineDry21m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeFirLrg01']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMountainPine12m']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMountainPine19m']">   <!-- medium tree -->
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMountainPine27m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMountainPine41m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeWinterEverGreen']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treeWinterPine13m']">   <!-- medium tree -->
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeWinterPine19m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeWinterPine28m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedWinterPine6m']">   <!-- small tree -->
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedWinterPine13m']">   <!-- medium tree -->
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedWinterPine19m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedWinterPine28m']">   <!-- large tree -->
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<!--
+<append xpath="/blocks/block[@name='treeMaple13m']">  
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMaple15m']">   
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMaple16m']">   
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treeMaple17m']">   
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMaple6m']">   
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="1" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.15" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMaple13m']">  
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="2" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="1" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMaple15m']">  
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMaple17m']">  
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+
+<append xpath="/blocks/block[@name='treePlantedMaple17mPlus']">   
+	<drop event="Destroy" name="resourceFeather" count="5" prob="0.35" />
+	<drop event="Destroy" name="resourceFeather" count="3" prob="0.6" />
+	<drop event="Destroy" name="foodEgg" count="2" prob="0.2" />
+</append>
+-->
+
+<!-- Add chance to harvest wheels from damaged cars -->
+<append xpath="/blocks/block[@name='cntCar03SedanDamage1']">   <!-- damaged car -->
+	<drop event="Harvest" name="vehicleWheels" count="1,2" prob="0.2" tag="salvageHarvest"/>
+</append>
+
+<!-- Add harvesting to chem sets -->
+<append xpath="/blocks/block[@name='chemSet1']">   <!-- chemistry set -->
+	<drop event="Harvest" name="resourceScrapIron" count="25" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceWood" count="10" tag="allHarvest"/>
+	
+	<drop event="Harvest" name="resourcePaint" count="1,5" prob=".3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceGunPowder" count="8" prob=".35" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceOilShale" count="1,8" prob=".2" tag="salvageHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+</append>
+
+<append xpath="/blocks/block[@name='chemSet2']">   <!-- chemistry set -->
+	<drop event="Harvest" name="resourceScrapIron" count="25" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceWood" count="10" tag="allHarvest"/>
+	
+	<drop event="Harvest" name="resourceCropHopsFlower" count="1,4" prob=".3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="drinkJarRiverWater" count="2,4" prob=".4" tag="salvageHarvest"/>
+	<drop event="Harvest" name="drinkJarGrainAlcohol" count="1,3" prob=".2" tag="salvageHarvest"/>
+</append>
+
+<append xpath="/blocks/block[@name='chemSet3']">   <!-- chemistry set -->
+	<drop event="Harvest" name="resourceScrapIron" count="25" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceWood" count="10" tag="allHarvest"/>
+	
+	<drop event="Harvest" name="resourcePotassiumNitratePowder" count="1,5" prob=".3" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceAcid" count="1,2" prob=".35" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceTestosteroneExtract" count="1" prob=".2" tag="salvageHarvest"/>
+</append>
+
+<!-- Add harvesting to potted plants -->
+<append xpath="/blocks/block[@name='treePlant02']">   <!-- potted plants -->
+	<drop event="Harvest" name="resourceYuccaFibers" count="1,3" tag="allHarvest"/>
+	<drop event="Harvest" name="resourceClayLump" count="3,6" tag="allHarvest"/>
+</append>
 
 
 </craftworx>

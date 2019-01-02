@@ -3,6 +3,9 @@
 <!-- Add impact wrench to advanced engineering perk -->
 <set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='5']/@tags">autoTurret,meleeToolAuger,meleeToolChainsaw,Impact Wrench</set>
 
+<!-- Remove basic food recipes from Master Chef level 1 -->
+<set xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,5']/@tags">foodBaconAndEggs,foodGrilledMeat,foodCornBread,drinkJarRedTea,drinkJarCoffee,drinkJarGoldenRodTea</set>
+
 	<append xpath="/progression/perks">
 
 <!-- New Perks -->
