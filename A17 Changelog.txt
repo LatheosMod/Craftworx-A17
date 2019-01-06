@@ -87,8 +87,15 @@ Added harvesting to chemsets - three different possible result sets
 Add harvesting to potted plants
 Changed group property on handlantern and handflashlight from miscellaneous to Tools/Traps
 Removed the following from Master Chef perk level 1: foodBoiledMeat, foodBakedPotato, foodCornOnTheCob
-Adjusted silenced weapon sounds range and volume to be in line with the silenced pistol. Range is 35%, vilume is 40% of unsuppressed volume
+Adjusted silenced weapon sounds range and volume to be in line with the silenced pistol. Range is 35%, volume is 40% of unsuppressed volume
 Integrated SMX UI into mod
 
 To Do:
 Add signature weapons, portable combine station, carbon steel & kukri, working oven & sink, repeating crossbow, turd mortar, monocular
+
+<----- 06 Jan 2019 ----->
+Craftworx 3.12
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
+
+Updated Guppycur's placeable light mod
+Added resourceParaffin to items, recipes, and icons

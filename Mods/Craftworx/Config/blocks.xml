@@ -358,7 +358,7 @@
 	<property name="DescriptionKey" value="torchGroupDesc"/>
 	<property name="FilterTags" value="fdecor,felectrical"/>
 	<property name="SortOrder1" value="70a0"/>			
-</block>
+</block>		
 
 <!-- Adobe blocks -->
 <block name="adobeMaster">
@@ -1007,21 +1007,21 @@
 </append>
 
 <!-- Guppy's Placeable Light Mod -->
-<append xpath="/blocks/block[@name='workLightPOI']">
-	<drop event="Destroy" name="PlaceableConstructionLight" count="1"/>
-	<drop event="Fall" name="scrapMetalPile" count="0" prob="0"/>
-	<drop event="Destroy" name="resourceScrapIron" count="0" prob="0"/>
-</append>
-<append xpath="/blocks/block[@name='lanternDecorLight']">
-	<drop event="Destroy" name="PlaceableLanternBlock" count="1"/>
-	<drop event="Fall" name="scrapMetalPile" count="0" prob="0"/>
-	<drop event="Destroy" name="resourceScrapIron" count="0" prob="0"/>
-</append>
-<append xpath="/blocks/block[@name='flashlightDecor']">
-	<drop event="Destroy" name="PlaceableFlashLight" count="1"/>
-	<drop event="Fall" name="scrapMetalPile" count="0" prob="0"/>
-	<drop event="Destroy" name="resourceScrapIron" count="0" prob="0"/>
-</append>
+	<append xpath="/blocks/block[@name='workLightPOI']">
+		<drop event="Destroy" name="PlaceableConstructionLight" count="1"/>
+		<drop event="Fall" name="scrapMetalPile" count="0" prob="0"/>
+		<drop event="Destroy" name="resourceScrapIron" count="0" prob="0"/>
+	</append>
+	<append xpath="/blocks/block[@name='lanternDecorLight']">
+		<drop event="Destroy" name="PlaceableLanternBlock" count="1"/>
+		<drop event="Fall" name="scrapMetalPile" count="0" prob="0"/>
+		<drop event="Destroy" name="resourceScrapIron" count="0" prob="0"/>
+	</append>
+	<append xpath="/blocks/block[@name='flashlightDecor']">
+		<drop event="Destroy" name="PlaceableFlashLight" count="1"/>
+		<drop event="Fall" name="scrapMetalPile" count="0" prob="0"/>
+		<drop event="Destroy" name="resourceScrapIron" count="0" prob="0"/>
+	</append>
 
 <!-- Enable picking up of portraits -->
 <append xpath="/blocks/block[@name='paintingBen']">
