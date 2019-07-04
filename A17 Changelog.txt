@@ -58,11 +58,6 @@ Added mAdobe and MresourceaAdobe
 XUI and Windows:
 Added SMX UI elements
 
-To Do:
-Add signature weapons, portable combine station, carbon steel & kukri, working oven & sink, repeating crossbow, turd mortar, monocular
-Figure out how to change the lootlist entry for cntBin from 10 to 16
-Custom SMX splash screen for Craftworx
-
 <----- 28 Dec 2018 ----->
 Craftworx 3.1
 Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
@@ -90,12 +85,47 @@ Removed the following from Master Chef perk level 1: foodBoiledMeat, foodBakedPo
 Adjusted silenced weapon sounds range and volume to be in line with the silenced pistol. Range is 35%, volume is 40% of unsuppressed volume
 Integrated SMX UI into mod
 
-To Do:
-Add signature weapons, portable combine station, carbon steel & kukri, working oven & sink, repeating crossbow, turd mortar, monocular
-
 <----- 06 Jan 2019 ----->
 Craftworx 3.12
 Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
 
 Updated Guppycur's placeable light mod
 Added resourceParaffin to items, recipes, and icons
+
+<----- 15 Jan 2019 ----->
+Craftworx 3.13
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
+
+Removed adjusted silenced weapon sounds - fixed in A17.1
+Added functional water cooler and functional stove to blocks, recipes
+Added functional water cooler and stove to advanced engineering level 1
+Moved impact wrench from Advanced engineering level 5 to level 4
+Added line to emptyJar to allow the functional water cooler to dispense murky water
+
+<----- 23 Jun-4 Jul 2019 ----->
+Craftworx 3.2
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
+
+Removed player level requirements from perks
+Added custom localization.txt file to mod, overwriting the standard config file
+Removed the harvesting of chemistry sets, as they are now lootable
+Disabled functional stove, as it's currently not actually functional - bug updated in GitHub Issues tab
+Increased resource item stack size from 500 to 750
+Adjusted crossbow reload speed to be more in line with the other ranged weapons (changed .5 to .8)
+Removed stamina drain when aiming crossbow
+Fixed noisy exploding small trash bin (now it's a quiet exploding trash bin)
+Changed sound of lockpicking to be much quieter
+Changed values for unlocking doors/safes (to make them less annoying to unlock)
+Reduced the crafting cost of refined coal from 25 to 15
+Changed the icon for the placeable construction light to a better rendering
+Added chance to get scrap brass from sinks, doorknobs and hinges from wooden and house doors
+Fixed some of the missing localization references from vanilla (medical piles, wood plates, empty shopping cart)
+Added static jail doors and bars to recipe list at the workbench
+Added custom main menu screen
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 <craftworx>
-<!-- Nailgun sounds -->
+<!-- Impact Wrench sounds -->
 	<insertAfter xpath="/Sounds/SoundDataNode[@name='nailgun_fire']">
              <SoundDataNode name="impactWrench"> <AudioSource name="Sounds/AudioSource_Reloads" />
 				<Noise ID="1" range="14" volume="30" time="2" muffled_when_crouched="0.65" heat_map_strength="0.05" 
@@ -10,9 +10,10 @@
 				<LocalCrouchVolumeScale value="1" /> <CrouchNoiseScale value="1" /> <NoiseScale value="1" /> <MaxVoices  
                  value="30" /> <MaxVoicesPerEntity value="10" /> <MaxRepeatRate value="0.001" /> </SoundDataNode>
 	</insertAfter>
+	
 
 <!-- Adjusted silenced firearm sounds -->
-
+<!--
 <set xpath="/Sounds/SoundDataNode[@name='ak47_s_fire']/Noise[@ID='5']/@range">21</set>
 <set xpath="/Sounds/SoundDataNode[@name='ak47_s_fire']/Noise[@ID='5']/@volume">60</set>
 
@@ -27,5 +28,5 @@
 
 <set xpath="/Sounds/SoundDataNode[@name='sniperrifle_s_fire']/Noise[@ID='5']/@range">21</set>
 <set xpath="/Sounds/SoundDataNode[@name='sniperrifle_s_fire']/Noise[@ID='5']/@volume">72</set>
-
+-->
 </craftworx>

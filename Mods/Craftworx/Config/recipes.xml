@@ -12,51 +12,51 @@
     <append xpath="/recipes">
 	
 <!-- Scrap Iron Tools -->
-<recipe name="Scrap Iron Axe" count="1"> <!-- meleeToolFireaxeScrapIron -->
+<recipe name="meleeToolFireaxeScrapIron" count="1"> <!-- meleeToolFireaxeScrapIron -->
 	<ingredient name="resourceScrapIron" count="50"/>
 	<ingredient name="resourceYuccaFibers" count="5"/>
 	<ingredient name="resourceWood" count="2"/>
 </recipe>
 
-<recipe name="Scrap Iron Pickaxe" count="1"> <!-- meleeToolPickaxeScrapIron --> 
+<recipe name="meleeToolPickaxeScrapIron" count="1"> <!-- meleeToolPickaxeScrapIron --> 
 	<ingredient name="resourceScrapIron" count="80"/>
 	<ingredient name="resourceYuccaFibers" count="5"/>
 	<ingredient name="resourceWood" count="3"/>
 </recipe>
 
-<recipe name="Scrap Iron Shovel" count="1"> <!-- meleeToolShovelScrapIron -->
+<recipe name="meleeToolShovelScrapIron" count="1"> <!-- meleeToolShovelScrapIron -->
 	<ingredient name="resourceScrapIron" count="65"/>
 	<ingredient name="resourceYuccaFibers" count="5"/>
 	<ingredient name="resourceWood" count="3"/>
 </recipe>
 
-<recipe name="Scrap Iron Shiv" count="1"> <!-- meleeToolShivScrapIron -->
+<recipe name="meleeToolShivScrapIron" count="1"> <!-- meleeToolShivScrapIron -->
 	<ingredient name="resourceScrapIron" count="8"/>
 	<ingredient name="resourceYuccaFibers" count="5"/>
 </recipe>
 
 <!-- Turd Weaponry -->
-<recipe name="Turd Bolt" count="1" scrapable="False" craft_time="2"> <!-- ammoTurdBolt -->
+<recipe name="ammoTurdBolt" count="1" scrapable="False" craft_time="2"> <!-- ammoTurdBolt -->
 	<ingredient name="resourceTurd" count="1"/>
 	<ingredient name="resourceClayLump" count="1"/> <!-- to form turd around crossbow bolt -->
 	<ingredient name="ammoCrossbowBoltIron" count="1"/>
 </recipe>
 
-<recipe name="Turd Launcher" count="1" scrapable="True" > <!-- gunTurdLauncher -->
+<recipe name="gunTurdLauncher" count="1" scrapable="True" > <!-- gunTurdLauncher -->
     <ingredient name="resourceWood" count="10"/>
     <ingredient name="resourceScrapIron" count="25"/>
     <ingredient name="resourceYuccaFibers" count="4"/>
 </recipe>
 
 <!-- Ammunition -->
-<recipe name="Flaming Crossbow Bolt" count="1" craft_area="workbench" tags="learnable"> <!-- ammoCrossbowBoltFlaming -->
+<recipe name="ammoCrossbowBoltFlaming" count="1" craft_area="workbench" tags="learnable"> <!-- ammoCrossbowBoltFlaming -->
 	<ingredient name="ammoCrossbowBoltSteelAP" count="1"/>
 	<ingredient name="resourceGunPowder" count="2"/>
 	<ingredient name="resourceCloth" count="1"/>
 	<ingredient name="resourceTallow" count="1"/>
 </recipe>
 
-<recipe name="Scrap Arrow" count="1"> <!-- ammoArrowScrapIron -->
+<recipe name="ammoArrowScrapIron" count="1"> <!-- ammoArrowScrapIron -->
 	<ingredient name="resourceScrapIron" count="3"/>
 	<ingredient name="resourceWood" count="1"/>
 	<ingredient name="resourceFeather" count="1"/>
@@ -68,7 +68,7 @@
 </recipe>
 
 <recipe name="ammoArrowIron" count="1" scrapable="False" craft_area="workbench">
-    <ingredient name="Scrap Arrow" count="1" />
+    <ingredient name="ammoArrowScrapIron" count="1" />
     <ingredient name="resourceArrowHeadIron" count="1" />
 </recipe>
 
@@ -78,7 +78,7 @@
 </recipe>
 
 <recipe name="ammoArrowSteelAP" count="1" scrapable="False" craft_area="workbench"> <!--  craft_tool="toolFletchingStation" -->
-    <ingredient name="Scrap Arrow" count="1" />
+    <ingredient name="ammoArrowScrapIron" count="1" />
     <ingredient name="resourceArrowHeadSteelAP" count="1" />
 </recipe>
 
@@ -111,8 +111,8 @@
 </recipe>
 
 <!-- Miscellaneous Items -->
-<recipe name="refinedCoal" count="1" scrapable="False" craft_area="chemistryStation">
-    <ingredient name="resourceCoal" count="25" />
+<recipe name="resourceRefinedCoal" count="1" scrapable="False" craft_area="chemistryStation">
+    <ingredient name="resourceCoal" count="15" />
 </recipe>
 
 <!--
@@ -140,7 +140,7 @@
 </recipe>
 	
 <!-- Impact Wrench -->
-<recipe name="Impact Wrench" count="1" craft_area="workbench" tags="learnable">
+<recipe name="toolImpactWrench" count="1" craft_area="workbench" tags="learnable">
 	<ingredient name="resourceForgedSteel" count="80"/>
 	<ingredient name="resourceMechanicalParts" count="100"/>
 	<ingredient name="resourceDuctTape" count="10"/>
@@ -417,6 +417,40 @@
 <recipe name="foodSaltedMeat" count="1" craft_time="5">
 	<ingredient name="foodRottingFlesh" count="1"/>
 	<ingredient name="resourcePotassiumNitratePowder" count="2"/>
+</recipe>
+
+<!-- Functional stove and water cooler -->
+<recipe name="functWaterCooler" count="1" craft_area="workbench" tags="learnable" >
+	<ingredient name="resourceScrapPolymers" count="20" />
+	<ingredient name="resourceForgedIron" count="7"/>
+	<ingredient name="resourceMetalPipe" count="3"/>
+</recipe>
+
+<!-- Disabled until activation bug sorted
+<recipe name="functStove" count="1" craft_area="workbench" tags="learnable" >
+	<ingredient name="resourceForgedIron" count="15" />
+	<ingredient name="toolCookingGrill" count="2" />
+	<ingredient name="resourceElectricParts" count="5"/>
+	<ingredient name="resourceMechanicalParts" count="5"/>
+</recipe>
+-->
+
+
+<!-- Jail Bars and Doors (static) -->
+<recipe name="jailDoorStatic" count="1" craft_area="workbench">
+	<ingredient name="forgedSteel" count="12"/>
+	<ingredient name="spring" count="3"/>
+	<ingredient name="mechanicalParts" count="3"/>
+</recipe>
+
+<recipe name="jailDoorStaticCentered" count="1" craft_area="workbench">
+	<ingredient name="forgedSteel" count="12"/>
+	<ingredient name="spring" count="3"/>
+	<ingredient name="mechanicalParts" count="3"/>
+</recipe>
+
+<recipe name="jailBars" count="1" craft_area="workbench">
+	<ingredient name="forgedSteel" count="12"/>
 </recipe>
 
 

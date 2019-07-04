@@ -89,7 +89,7 @@
 
 <!-- Adding Flaming bolt recipe to rare books lootgroup -->
 <append xpath="/lootcontainers/lootgroup[@name='rareBooks']"> 
-	<item name="Flaming Crossbow Bolt Schematic"/> <!-- ammoCrossbowBoltFlamingSchematic -->
+	<item name="ammoCrossbowBoltFlamingSchematic"/> <!-- ammoCrossbowBoltFlamingSchematic -->
 </append>
 
 <!-- Adding item junk to junk lootgroup -->

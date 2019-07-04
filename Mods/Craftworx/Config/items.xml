@@ -2,7 +2,7 @@
 
 <!-- Increase stack sizes -->
 <set xpath="/items/item[contains(@name,'schematicMaster')]/property[@name='Stacknumber']/@value">5</set>
-<set xpath="/items/item[contains(@name,'resource')]/property[@name='Stacknumber' and @value='250']/@value">500</set>
+<set xpath="/items/item[contains(@name,'resource')]/property[@name='Stacknumber' and @value='250']/@value">750</set>
 <set xpath="/items/item[contains(@name,'drinkJar')]/property[@name='Stacknumber' and @value='15']/@value">50</set>
 <set xpath="/items/item[contains(@name,'medical')]/property[@name='Stacknumber' and @value='10']/@value">20</set>
 <set xpath="/items/item[contains(@name,'medical')]/property[@name='Stacknumber' and @value='5']/@value">10</set>
@@ -98,11 +98,23 @@
 </append>
 -->
 
+<!-- Crossbow Reload Adjustment -->
+<set xpath="/items/item[@name='gunCrossbow']/effect_group[@name='Base Effects']/passive_effect[@name='ReloadSpeedMultiplier'][@operation='base_set']/@value">.8</set>
+
+<!-- Remove stamina use when aiming crossbow -->
+<set xpath="/items/item[@name='gunCrossbow']/property[@name='Tags']/@value">weapon,ranged,sideAttachments,smallTopAttachments,mediumTopAttachments,perkArchery</set>
+
+
+<!-- Functional Water Cooler -->
+<append xpath="/items/item[@name='drinkJarEmpty']/property[@class='Action1']">
+	<property name="Focused_blockname_6" value="functWaterCooler"/>
+</append>
+
 <!-- Add new items -->
 <append xpath="/items">
 
 <!-- Scrap Iron Tools -->
-<item name="Scrap Iron Shiv"> <!-- meleeToolShivScrapIron -->
+<item name="meleeToolShivScrapIron"> <!-- meleeToolShivScrapIron -->
 	<property name="Tags" value="knife,melee,light,weapon,meleeWeapon,perkDeepCuts,perkTheHuntsman"/>
 	<property name="DisplayType" value="melee"/>
 	<property name="HoldType" value="36"/>
@@ -166,12 +178,12 @@
 		</triggered_effect>
 	</effect_group>
 	<property name="Group" value="Tools/Traps,Ammo/Weapons"/>
-	<property name="DescriptionKey" value="Slightly better than the bone shiv for skinning animals. Not as good as an iron knife."/>
+	<property name="DescriptionKey" value="meleeToolShivScrapIronDesc"/>
 	<property name="ActionSkillGroup" value="Blade Weapons"/>
 	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 </item>
 
-<item name="Scrap Iron Axe"> <!-- meleeToolFireaxeScrapIron -->
+<item name="meleeToolFireaxeScrapIron"> <!-- meleeToolFireaxeScrapIron -->
 	<property name="Tags" value="knife,melee,medium,tool,perkDeepCuts,perkMotherLode"/>
 	<property name="DisplayType" value="melee"/>
 	<property name="HoldType" value="17"/>
@@ -225,10 +237,10 @@
 	<property name="Group" value="Tools/Traps,Basics"/>
 	<property name="ActionSkillGroup" value="Mining Tools"/>
 	<property name="CraftingSkillGroup" value="craftSkillTools"/>
-	<property name="DescriptionKey" value="Slightly better than the stone axe for chopping wood. Not as good as a real iron fireaxe."/>
+	<property name="DescriptionKey" value="meleeToolFireaxeScrapIronDesc"/>
 </item>
 
-<item name="Scrap Iron Pickaxe"> <!-- meleeToolPickaxeScrapIron -->
+<item name="meleeToolPickaxeScrapIron"> <!-- meleeToolPickaxeScrapIron -->
 	<property name="Tags" value="melee,medium,tool,perkMotherLode"/>
 	<property name="DisplayType" value="melee"/>
 	<property name="HoldType" value="12"/>
@@ -287,10 +299,10 @@
 	<property name="ActionSkillGroup" value="Mining Tools"/>
 	<property name="CraftingSkillGroup" value="craftSkillTools"/>
 	<property name="PickupJournalEntry" value="miningTip"/>
-	<property name="DescriptionKey" value="Slightly better than the stone axe for mining. Not as good as a real iron pickaxe."/>
+	<property name="DescriptionKey" value="meleeToolPickaxeScrapIronDesc"/>
 </item>
 
-<item name="Scrap Iron Shovel"> <!-- meleeToolShovelScrapIron -->
+<item name="meleeToolShovelScrapIron"> <!-- meleeToolShovelScrapIron -->
 	<property name="Tags" value="melee,medium,tool,shovel,perkMotherLode"/>
 	<property name="DisplayType" value="melee"/>
 	<property name="HoldType" value="18"/>
@@ -343,11 +355,11 @@
 	<property name="ActionSkillGroup" value="Mining Tools"/>
 	<property name="CraftingSkillGroup" value="craftSkillTools"/>
 	<property name="PickupJournalEntry" value="miningTip"/>
-	<property name="DescriptionKey" value="Slightly better than the stone shovel for digging. Not as good as a real iron shovel."/>
+	<property name="DescriptionKey" value="meleeToolShovelScrapIronDesc"/>
 </item>
 
 <!-- Impact Wrench -->
-<item name="Impact Wrench">
+<item name="toolImpactWrench">
 	<property name="Tags" value="blunt,melee,light,tool,perkStayDown,perkSalvageOperations"/>
 	<property name="CustomIcon" value="toolImpactWrench"/>
 	<property name="DisplayType" value="meleeRepairTool"/>
@@ -437,6 +449,7 @@
 		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps"/>
+	<property name="DescriptionKey" value="toolImpactWrenchDesc" />
 	<property name="ActionSkillGroup" value="Construction Tools"/>
 	<property name="CraftingSkillGroup" value="craftSkillScience"/>
 	<property name="RepairExpMultiplier" value="10.8"/>
@@ -515,7 +528,7 @@
 </item> -->
 
 <!-- Turd Launcher -->
-<item name="Turd Launcher"> <!-- gunTurdLauncher -->
+<item name="gunTurdLauncher"> <!-- gunTurdLauncher -->
 	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,sideAttachments,smallTopAttachments,perkArchery"/>
 	<property name="DisplayType" value="rangedBow"/>
 	<property name="HoldType" value="26"/>
@@ -583,7 +596,7 @@
 	<property name="DescriptionKey" value="gunTurdLauncherDesc" />
 </item>
 
-<item name="Turd Bolt"> <!-- ammoTurdBolt -->
+<item name="ammoTurdBolt"> <!-- ammoTurdBolt -->
 	<property name="Tags" value="ranged,perkArchery"/>
 	<property name="DisplayType" value="ammoArrow"/>
 	<property name="Meshfile" value="Items/Crafting/clay" />
@@ -624,17 +637,17 @@
 </item>
 
 <!-- Ammunition -->
-<item name="Flaming Crossbow Bolt Schematic"> <!-- ammoCrossbowBoltFlamingSchematic -->
+<item name="ammoCrossbowBoltFlamingSchematic"> <!-- ammoCrossbowBoltFlamingSchematic -->
 	<property name="Extends" value="unlockBookMaster"/>
 	<property name="CustomIcon" value="ammoCrossbowBoltFlamingSchematic"/>
 	<property name="CreativeMode" value="Player"/>
 	<property class="Action0">
 		<property name="Recipes_to_learn" value="Flaming Crossbow Bolt" />
 	</property>
-	<property name="DescriptionKey" value="flamingBoltSchematicDesc" />
+	<property name="DescriptionKey" value="ammoCrossbowBoltFlamingSchematicDesc" />
 </item>
 
-<item name="Flaming Crossbow Bolt"> <!-- ammoCrossbowBoltFlaming -->
+<item name="ammoCrossbowBoltFlaming"> <!-- ammoCrossbowBoltFlaming -->
 	<property name="Tags" value="ranged,perkArchery"/>
 	<property name="DisplayType" value="ammoArrow"/>
 	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/WoodenBow/flamingArrowPrefab"/>
@@ -674,11 +687,11 @@
 		<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffBurningFlamingArrow"/>
 	</effect_group>
 	<property name="Group" value="Ammo/Weapons" />
-	<property name="DescriptionKey" value="ammoBoltFlamingDesc" />
+	<property name="DescriptionKey" value="ammoCrossbowBoltFlamingDesc" />
 	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 </item>
 
-<item name="Scrap Arrow"> <!-- ammoArrowScrapIron -->
+<item name="ammoArrowScrapIron"> <!-- ammoArrowScrapIron -->
 	<property name="DisplayType" value="ammoArrow"/>
 	<property name="Tags" value="ranged,perkArchery"/>
 	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/WoodenBow/Arrow"/>
@@ -716,6 +729,7 @@
 		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0" tags="glass"/>
 	</effect_group>
 	<property name="Group" value="Ammo/Weapons,Basics"/>
+	<property name="DescriptionKey" value="ammoArrowScrapIronDesc" />
 	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 </item>
 
@@ -1070,7 +1084,7 @@
 		<property name="Mask0" value="legs" param1="inner"/>
 		<property name="UISlot" value="Pants"/>
 	</property>
-	<property name="DescriptionKey" value="denimClothesGroupDesc"/>
+	<property name="DescriptionKey" value="clothClothesGroupDesc"/>
 	<property name="Group" value="Clothing"/>
 	<property name="ActionSkillGroup" value="Clothing/Armor"/>
 	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
@@ -1104,7 +1118,7 @@
 		<property name="Mask0" value="chest" param1="inner"/>
 		<property name="UISlot" value="Shirt"/>
 	</property>
-	<property name="DescriptionKey" value="shirtClothesGroupDesc"/>
+	<property name="DescriptionKey" value="clothClothesGroupDesc"/>
 	<property name="Group" value="Clothing"/>
 	<property name="ActionSkillGroup" value="Clothing/Armor"/>
 	<property name="CraftingSkillGroup" value="craftSkillMiscellaneous"/>
@@ -1317,7 +1331,7 @@
 </item>
 
 <!-- Miscellaneous Items -->
-<item name="refinedCoal">
+<item name="resourceRefinedCoal">
 	<property name="Meshfile" value="Items/Misc/sackPrefab" />
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="Mcoal"/>
@@ -1327,7 +1341,7 @@
 	<property name="EconomicValue" value="250" />
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="Group" value="Resources" />
-	<property name="DescriptionKey" value="refinedCoalDesc" />
+	<property name="DescriptionKey" value="resourceRefinedCoalDesc" />
 	<property name="CraftingIngredientTime" value="1"/>
 </item>
 
@@ -1339,6 +1353,7 @@
 	<property name="EconomicValue" value="10"/>
 	<property name="SellableToTrader" value="false"/>
 	<property name="Group" value="Resources"/>
+	<property name="DescriptionKey" value="resourceTurdDesc" />
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="ThrowAway"/>
 		<property name="Delay" value="1.2"/>
@@ -1362,6 +1377,7 @@
 	<property name="EconomicValue" value="10"/>
 	<property name="EconomicBundleSize" value="100"/>
 	<property name="Group" value="Resources"/>
+	<property name="DescriptionKey" value="resourceAdobeDesc" />
 </item>
 
 <!-- Khaine's lockpick -->
@@ -1391,7 +1407,8 @@
 		<property name="Delay" value="1"/> 
 		<property name="Repair_amount" value="100"/>
 		<property name="Upgrade_hit_offset" value="0"/>
-		<property name="Sound_start" value="repair_block"/>
+		<property name="Sound_start" value="weapon_empty"/>
+		<property name="Upgrade_action_sound" value="weapon_empty"/>
 		<property name="Allowed_upgrade_items" value="toolLockpick"/>
 		<property name="UsePowerAttackAnimation" value="false"/>
 	</property>
@@ -1402,6 +1419,7 @@
 		<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
 	</effect_group>
 	<property name="Group" value="Tools/Traps,Basics"/>
+	<property name="DescriptionKey" value="toolLockpickDesc" />
 	<property name="ActionSkillGroup" value="Construction Tools"/>
 	<property name="CraftingSkillGroup" value="craftSkillTools"/>
 	<property name="RepairExpMultiplier" value="5.5"/>
@@ -1452,7 +1470,8 @@
 				<property name="Delay" value="0.5"/>
 				<property name="Blockname" value="PlaceableLanternBlock"/>
 			</property>
-			<property name="Group" value="Basics,Decor/Miscellaneous"/>
+			<property name="Group" value="Basics,Resources"/>
+			<property name="DescriptionKey" value="handLanternDesc" />
 			<property name="LightValue" value="0.35"/>
 			<property name="LightSource" value="lightSource"/>
 			<property name="ActivateObject" value="lightSource"/>
@@ -1477,6 +1496,7 @@
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="Group" value="Resources"/>
+			<property name="DescriptionKey" value="handLanternGlass" />
 			<property name="RepairTime" value="0.5"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="CraftingIngredientTime" value="0.2"/>
@@ -1493,6 +1513,7 @@
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="Group" value="Resources"/>
+			<property name="DescriptionKey" value="handLanternCasingDesc" />
 			<property name="RepairTime" value="0.5"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="CraftingIngredientTime" value="0.2"/>
@@ -1528,7 +1549,8 @@
 				<property name="Blockname" value="PlaceableFlashLight"/>
 			</property>
 			
-			<property name="Group" value="Basics,Decor/Miscellaneous"/>
+			<property name="Group" value="Basics,Resources"/>
+			<property name="DescriptionKey" value="handFlashlightDesc" />
 			<!--
 			<effect_group name="Base Effects">
 				<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
@@ -1623,7 +1645,7 @@
 		<property name="Sound_start" value="player_eating"/>
 	</property>
 	<property name="Group" value="Food/Cooking" />
-	<property name="DescriptionKey" value="saltedMeatDesc" />
+	<property name="DescriptionKey" value="foodSaltedMeatDesc" />
 	
 	<effect_group tiered="false">
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodAmount" operation="add" value="5"/>

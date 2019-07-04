@@ -1,15 +1,25 @@
 <craftworx>
 
+<!-- Add Functional stove and water cooler to Advanced Engineering -->
+<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,5']/@tags">workbench,functStove,functWaterCooler,tableSaw,generatorbank,electricwirerelay,switch,ceilingLight01_player,gunCrossbow,gunCompoundBow,armorMiningHelmet</set>
+
 <!-- Add impact wrench to advanced engineering perk -->
-<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='5']/@tags">autoTurret,meleeToolAuger,meleeToolChainsaw,Impact Wrench</set>
+<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='4,5']/@tags">shotgunTurret,gunRocketLauncher,gunToolNailgun,Impact Wrench</set>
 
 <!-- Remove basic food recipes from Master Chef level 1 -->
 <set xpath="/progression/perks/perk[@name='perkMasterChef']/effect_group/passive_effect[@name='RecipeTagUnlocked'][@level='1,5']/@tags">foodBaconAndEggs,foodGrilledMeat,foodCornBread,drinkJarRedTea,drinkJarCoffee,drinkJarGoldenRodTea</set>
 
+<!-- Remove player level gates from Craftmanship perks -->
+<set xpath="/progression/perks/perk[@name='perkHammerForge']/level_requirements/requirement[@name='PlayerLevel']/@value">1</set>
+<set xpath="/progression/perks/perk[@name='perkGreaseMonkey']/level_requirements/requirement[@name='PlayerLevel']/@value">1</set>
+<set xpath="/progression/perks/perk[@name='perkAdvancedEngineering']/level_requirements/requirement[@name='PlayerLevel']/@value">1</set>
+
+
+
 	<append xpath="/progression/perks">
 
 <!-- New Perks -->
-		<perk name="perkLockpicking" parent="skillStealth" name_key="Lockpicking" desc_key="Unlocks the lockpick recipe at level 2 and decreases noise made by lockpicking" icon="ui_game_symbol_knunchuck">
+		<perk name="perkLockpicking" parent="skillStealth" name_key="Lockpicking" desc_key="perkLockpickingDesc" icon="ui_game_symbol_knunchuck">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="1" desc_key="reqAgilityLevel1"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="3" desc_key="reqAgilityLevel3"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="5" desc_key="reqAgilityLevel5"/></level_requirements>
@@ -31,7 +41,7 @@
 			</effect_group>
 		</perk>
 		
-		<perk name="perkTailorMade" parent="skillCraftsmanship" max_level="5" name_key="Tailor-Made" desc_key="Unlocks the ability to craft clothing" icon="ui_game_symbol_tailoring">
+		<perk name="perkTailorMade" parent="skillCraftsmanship" max_level="5" name_key="Tailor-Made" desc_key="perkTailorMadeDesc" icon="ui_game_symbol_tailoring">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="1" desc_key="reqIntellectLevel1"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="2" desc_key="reqIntellectLevel2"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="3" desc_key="reqIntellectLevel3"/></level_requirements>
