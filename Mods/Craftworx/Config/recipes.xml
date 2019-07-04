@@ -438,19 +438,19 @@
 
 <!-- Jail Bars and Doors (static) -->
 <recipe name="jailDoorStatic" count="1" craft_area="workbench">
-	<ingredient name="forgedSteel" count="12"/>
-	<ingredient name="spring" count="3"/>
-	<ingredient name="mechanicalParts" count="3"/>
+	<ingredient name="resourceForgedSteel" count="12"/>
+	<ingredient name="resourceSpring" count="3"/>
+	<ingredient name="resourceMechanicalParts" count="3"/>
 </recipe>
 
 <recipe name="jailDoorStaticCentered" count="1" craft_area="workbench">
-	<ingredient name="forgedSteel" count="12"/>
-	<ingredient name="spring" count="3"/>
-	<ingredient name="mechanicalParts" count="3"/>
+	<ingredient name="resourceForgedSteel" count="12"/>
+	<ingredient name="resourceSpring" count="3"/>
+	<ingredient name="resourceMechanicalParts" count="3"/>
 </recipe>
 
 <recipe name="jailBars" count="1" craft_area="workbench">
-	<ingredient name="forgedSteel" count="12"/>
+	<ingredient name="resourceForgedSteel" count="12"/>
 </recipe>
 
 
