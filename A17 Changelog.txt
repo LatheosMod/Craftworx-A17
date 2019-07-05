@@ -123,9 +123,10 @@ Fixed some of the missing localization references from vanilla (medical piles, w
 Added static jail doors and bars to recipe list at the workbench
 Added custom main menu screen
 
+<----- 5 Jul 2019 ----->
+Craftworx 3.21
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
 
-
-
-
-
-
+Fixed incorrect syntax for scrap arrows, which puts them back in the radial menu. Oops.
+Removed text referring to the functional stove from localization.txt 
+Changed icon for lockpicks to be more visible

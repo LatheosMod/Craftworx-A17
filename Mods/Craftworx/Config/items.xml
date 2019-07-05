@@ -68,12 +68,9 @@
 <set xpath="/items/item[@name='meleeToolAuger']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.5,1</set>
 
 <!-- Append existing items -->
- <!-- <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltFlaming</append> -->
-<append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Flaming Crossbow Bolt</append>
- <!-- <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrap</append>
- <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrap</append> -->
-<append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
-<append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,Scrap Arrow</append>
+ <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltFlaming</append> 
+ <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrapIron</append>
+ <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrapIron</append> 
 
 <!-- Add empty jar to some food items when used -->
 <!-- Not currently working
