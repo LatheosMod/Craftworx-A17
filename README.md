@@ -16,7 +16,6 @@ This mod includes the work of the following:
 Craftworx now uses the xpath system for modifying the game, which is a departure from how things were done in previous builds of 7DtD. What this means for the player is that the vanilla config files aren't overwritten, with the exception of the localization.txt file. This has the benefit of making the mod more robust in the event of code changes by The Fun Pimps. 
 
 What you can expect to be included so far:
-
 - Increased stack sizes for many items
 - Larger backpack
 - Flaming crossbow bolts, learned from a recipe out in the wilderness
@@ -43,7 +42,6 @@ What you can expect to be included so far:
 - Craftable jail doors and bars at the workbench (static for the time being)
 
 On the list for getting added in the future:
-
 - Signature weapons, such as Aviary's Lawbreaker, Red's Specs, and others
 - Carbon steel, and the tools/weapons that are crafted from it
 - Turd Mortar
@@ -54,6 +52,6 @@ On the list for getting added in the future:
 
 Installing the mod:
 
-Download the archive, then unpack and copy the contents of Craftworx-master into your \Steam\SteamApps\common\7 Days To Die\, and the files will go where they need to go.
+Download the archive, then unpack and copy Data and Mod folders from Craftworx-master into your \Steam\SteamApps\common\7 Days To Die\, and the files will go where they need to go.
 
 While designed for single player games, the mod *should* work on servers with a minimum of hassle. 
