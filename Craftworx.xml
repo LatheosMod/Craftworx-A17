@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Servers>
+   <ServerGroup Name="Craftworx" Description="Craftworx light overhaul mod">
+    <Server Name="Craftworx">
+         <Description>Craftworx is a light overhaul mod with a focus on building and crafting. 
+
+	What this mod includes so far:
+
+		* Increased stack sizes for many items
+		* Larger backpack
+		* Flaming crossbow bolts, learned from a recipe out in the wilderness
+		* Scrap arrows, for when you have lots of scrap iron but few stones
+		* Scrap tools - shiv, axe, pick and shovel
+		* The turd launcher is, of course, in here
+		* Poop is back in the toilets for the turd launcher
+		* Additional junk items for most resources
+		* New perks - Lockpicking and Tailor Made (for making clothing)
+		* Adobe and adobe blocks, back from previous versions of the game
+		* Harvesting the lantern, construction lights, and box flashlights from POIs (just destroy them to gain the items)
+		* Beakers craftable in the forge
+		* Lockpicking safes and some doors (more door types to come at a later date)
+		* Quieter lockpicking with better sounds
+		* Trees have a chance to drop feathers and eggs
+		* Cars have a chance to harvest wheels with the wrench
+		* Some loot containers now self-destruct on close
+		* Impact wrench, for upgrading metal blocks
+		* Functional water cooler - dispenses murky water, and has a large storage space as well
+		* Boiled meat, baked potatoes, and Corn on the Cob no longer require the Master Chef perks
+		* Paraffin and refined coal, new fuels for burning
+		* Level gates on crafting skills are now gone (Ignore the mouseover text)
+		* Crossbow reload time reduced to make it more useful
+		* More opportunities to harvest brass things in the wilderness
+		* Craftable jail doors and bars at the workbench (static for the time being)
+		
+		More to come as development of the mod continues...
+		 </Description>
+
+		 <DownloadMode>Clone</DownloadMode>
+		<ReleaseNotes>https://7daystodie.com/forums/showthread.php?96171-Craftworx-Mod-and-Modlets&p=882485#post882485</ReleaseNotes>
+		<RSS>https://github.com/LatheosMod/Craftworx-A17/commits/master.atom</RSS>
+         <Downloads>
+            <Download>https://github.com/LatheosMod/Craftworx-A17/archive/master.zip</Download>
+
+         </Downloads>
+      </Server>
+  
+   </ServerGroup>
+</Servers>
