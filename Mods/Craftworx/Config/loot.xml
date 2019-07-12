@@ -81,6 +81,12 @@
 	</lootgroup> 
 </insertBefore>
 
+<!-- Reducing clothing item drop percentages -->
+<set xpath="/lootcontainers/lootcontainer[@id='6']/item[@group='clothes']/@prob">0.5</set> <!-- Nightstand / Dressers -->
+<set xpath="/lootcontainers/lootcontainer[@id='13']/item[@group='clothes']/@prob">0.5</set> <!-- Laundry Basket -->
+<set xpath="/lootcontainers/lootcontainer[@id='18']/item[@group='clothes']/@prob">0.15</set> <!-- Washing Machine -->
+<set xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='clothes']/@prob">0.2</set> <!-- Metal Desk -->
+<set xpath="/lootcontainers/lootcontainer[@id='43']/item[@group='clothes']/@prob">0.5</set> <!-- Lockers -->
 
 <!-- Putting turds back in toilets -->
 <append xpath="/lootcontainers/lootgroup[@name='toiletLoot']"> 
@@ -149,10 +155,18 @@
 	<item name="toolLockpick" count="1" prob="0.5"/> <!-- toolLockpick -->
 </append>
 
-<!-- Making nests and trash (bags and the small bin) destroy on loot -->
+<!-- Making nests and trash bags destroy on loot -->
 <setattribute xpath="/lootcontainers/lootcontainer[@id='10']" name="destroy_on_close">true</setattribute> <!-- garbage -->
 
 <setattribute xpath="/lootcontainers/lootcontainer[@id='25']" name="destroy_on_close">true</setattribute> <!-- Bird Nests -->
 
+<!-- Setting custom lootgroup for small trash bin so it doesn't explode -->
+<append xpath="/lootcontainers">
+
+<lootcontainer id="120" count="0,2" size="5,3" sound_open="UseActions/open_garbage" sound_close="UseActions/close_garbage" loot_quality_template="baseTemplate">
+	<item group="junk"/>
+</lootcontainer>
+
+</append>
 
 </craftworx>

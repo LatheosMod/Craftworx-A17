@@ -34,7 +34,6 @@ What you can expect to be included so far:
 - Some loot containers now self-destruct on close
 - Impact wrench, for upgrading metal blocks
 - Functional water cooler - dispenses murky water, and has a large storage space as well
-- Boiled meat, baked potatoes, and Corn on the Cob no longer require the Master Chef perks
 - Paraffin and refined coal, new fuels for burning
 - Level gates on crafting skills are now gone (Ignore the mouseover text)
 - Crossbow reload time reduced to make it more useful

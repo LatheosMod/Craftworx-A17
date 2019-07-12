@@ -36,10 +36,10 @@
 </recipe>
 
 <!-- Turd Weaponry -->
-<recipe name="ammoTurdBolt" count="1" scrapable="False" craft_time="2"> <!-- ammoTurdBolt -->
+<recipe name="ammoTurdBolt" count="1" scrapable="False" craft_time="2"> <!-- Turd bolt -->
 	<ingredient name="resourceTurd" count="1"/>
 	<ingredient name="resourceClayLump" count="1"/> <!-- to form turd around crossbow bolt -->
-	<ingredient name="ammoCrossbowBoltIron" count="1"/>
+	<ingredient name="ammoCrossbowBoltStone" count="1"/>
 </recipe>
 
 <recipe name="gunTurdLauncher" count="1" scrapable="True" > <!-- gunTurdLauncher -->
@@ -49,14 +49,20 @@
 </recipe>
 
 <!-- Ammunition -->
-<recipe name="ammoCrossbowBoltFlaming" count="1" craft_area="workbench" tags="learnable"> <!-- ammoCrossbowBoltFlaming -->
+<recipe name="ammoCrossbowBoltFlaming" count="1" craft_area="workbench" tags="learnable"> <!-- Glaming crossbow Bolt -->
 	<ingredient name="ammoCrossbowBoltSteelAP" count="1"/>
 	<ingredient name="resourceGunPowder" count="2"/>
 	<ingredient name="resourceCloth" count="1"/>
 	<ingredient name="resourceTallow" count="1"/>
 </recipe>
 
-<recipe name="ammoArrowScrapIron" count="1"> <!-- ammoArrowScrapIron -->
+<recipe name="ammoArrowScrapIron" count="1"> <!-- Scrap Arrow -->
+	<ingredient name="resourceScrapIron" count="3"/>
+	<ingredient name="resourceWood" count="1"/>
+	<ingredient name="resourceFeather" count="1"/>
+</recipe>
+
+<recipe name="ammoCrossbowBoltScrapIron" count="1"> <!-- Scrap Bolt -->
 	<ingredient name="resourceScrapIron" count="3"/>
 	<ingredient name="resourceWood" count="1"/>
 	<ingredient name="resourceFeather" count="1"/>

@@ -68,7 +68,8 @@
 <set xpath="/items/item[@name='meleeToolAuger']/effect_group[@name='Base Effects']/passive_effect[@name='HarvestCount'][@operation='perc_add']/@value">.5,1</set>
 
 <!-- Append existing items -->
- <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltFlaming</append> 
+ <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltFlaming,ammoCrossbowBoltScrapIron</append>
+ <!-- <append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoCrossbowBoltScrapIron</append> -->
  <append xpath="/items/item[@name='gunWoodenBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrapIron</append>
  <append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,ammoArrowScrapIron</append> 
 
@@ -157,13 +158,13 @@
 		<passive_effect name="HarvestCount" operation="base_set" value=".5" tags="butcherHarvest"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="50,100" tier="1,6"/>
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.5" tags="secondary"/>
 		<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary"/>
 		<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="0" tags="secondary"/>
-		<passive_effect name="StaminaLoss" operation="base_add" value="18" tags="secondary"/> 
+		<passive_effect name="StaminaLoss" operation="base_add" value="16" tags="secondary"/> 
 
 		<triggered_effect trigger="onSelfSecondaryActionStart" action="PlaySound" target="self" sound="player1painlg">
 			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
@@ -221,9 +222,9 @@
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="52"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="primary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.2" tags="secondary"/>
@@ -274,9 +275,9 @@
 		<passive_effect name="AttacksPerMinute" operation="base_set" value="53"/> 
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="wood"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="17" tags="primary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="14" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.1" tags="secondary"/>
@@ -338,9 +339,9 @@
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="metal"/>
 		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="earth"/>
-		<passive_effect name="StaminaLoss" operation="base_set" value="18" tags="primary"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="16.8" tags="primary"/>
 		<passive_effect name="DegradationMax" operation="base_set" value="100,450" tier="1,6"/>
-		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<passive_effect name="ModSlots" operation="base_set" value="1"/>
 	</effect_group>
 	<effect_group name="Power Attack">
 		<passive_effect name="EntityDamage" operation="perc_add" value="1.4" tags="secondary"/>
@@ -688,7 +689,7 @@
 	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 </item>
 
-<item name="ammoArrowScrapIron"> <!-- ammoArrowScrapIron -->
+<item name="ammoArrowScrapIron"> <!-- Scrap Arrow -->
 	<property name="DisplayType" value="ammoArrow"/>
 	<property name="Tags" value="ranged,perkArchery"/>
 	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/WoodenBow/Arrow"/>
@@ -729,6 +730,45 @@
 	<property name="DescriptionKey" value="ammoArrowScrapIronDesc" />
 	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 </item>
+
+<item name="ammoCrossbowBoltScrapIron"> <!-- Scrap Bolt -->
+	<property name="Tags" value="ranged,perkArchery"/>
+	<property name="DisplayType" value="ammoArrow"/>
+	<property name="Meshfile" value="Items/Weapons/Ranged/Bows/Crossbow/crossbowBoltStonePrefab"/>
+	<property name="HoldType" value="32"/>
+	<property name="HandMeshfile" value="Items/Misc/crossbow_bolt_hand_stonePrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/crossbow_bolt_dropped_stonePrefab"/>
+	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+	<property name="CustomIcon" value="ammoCrossbowBoltScrapIron" />
+	<property name="CustomIconTint" value="E66920" />
+	<property name="TintColor" value="230,105,32" />
+	<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value="0.5"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="Stacknumber" value="250"/> <!-- STK ammo -->
+	<property name="FuelValue" value="25"/>
+	<property name="EconomicValue" value="20"/>
+	<property name="EconomicBundleSize" value="5"/>
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.ParticleIndex" value="0"/>
+		<property name="Gravity" value="-2.8"/>
+		<property name="FlyTime" value="0"/>
+		<property name="LifeTime" value="14"/>
+	</property>
+	<effect_group name="Base Effects" tiered="false"> <!-- ammoBoltScrapIron -->
+		<passive_effect name="EntityDamage" operation="base_set" value="31"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="4"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0.1" tags="wood" match_all_tags="true"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="71"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0" tags="glass"/>
+	</effect_group>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="DescriptionKey" value="ammoBoltScrapIronDesc" />
+	<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+</item>
+
 
 <!-- Junk Items -->
 <!-- item needed to scrap junk into -->

@@ -130,3 +130,16 @@ Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plant
 Fixed incorrect syntax for scrap arrows, which puts them back in the radial menu. Oops.
 Removed text referring to the functional stove from localization.txt 
 Changed icon for lockpicks to be more visible
+
+<----- 11 Jul 2019 ----->
+Craftworx 3.22
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
+
+Fixed incorrect localization text for refined coal
+Changed recipe for turd bolt to use stone bolts not iron bolts
+Added scrap bolts for the crossbow
+Fixed small trash bins to not explode
+Added chance for wooden pallets to drop nails
+Foods no longer excluded from the Master Chef perk
+Reduced clothing drop percentages
+Added leather armor to level 2 of Tailor Made perk.

@@ -52,11 +52,26 @@
 	<property name="OnlySimpleRotations" value="true"/>
 	<property name="ImposterExchange" value="imposterCTREighth" param1="75"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="LootList" value="10"/>
+	<property name="LootList" value="120"/>
 	<drop event="Destroy" name="resourceScrapPolymers" count="5" prob="1"/>
 	<property name="EconomicValue" value="40"/>
 	<property name="FilterTags" value="floot,ffurniture"/>
 </set>
+
+<!-- Add chance for pallets to drop nails -->
+<append xpath="/blocks/block[@name='palletEmpty']">
+	<drop event="Harvest" name="resourceNail" count="0,3" prob="0.4" tag="allHarvest"/>
+</append>
+
+<append xpath="/blocks/block[@name='palletEmptyStack']">
+	<drop event="Harvest" name="resourceNail" count="0,3" prob="0.4" tag="allHarvest"/>
+</append>
+
+<!-- Make paintings scrappable -->
+<append xpath="/blocks/block[@name='paintingBen']">
+	<property name="Weight" value="10"/>
+</append>
+
 
 <!-- Add new items -->
 <append xpath="/blocks">
