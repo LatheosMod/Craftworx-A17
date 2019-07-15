@@ -143,3 +143,18 @@ Added chance for wooden pallets to drop nails
 Foods no longer excluded from the Master Chef perk
 Reduced clothing drop percentages
 Added leather armor to level 2 of Tailor Made perk.
+
+<----- 15 Jul 2019 ----->
+Craftworx 3.23
+Includes modified Sirillion's SMX UI and Big Bag Mod, Khaine's Harvestable Plants and Lockpicking, Guppycur's Placeable Light Mod, JaxTeller718's Junk Items, Elucidus' Impact Wrench and Quality Level Reduced Stamina Loss and Effectiveness Bonus
+
+Added chance to drop more automotive parts from schoolbuses
+Increased stack sizes for certain resources from 1000 to 2500
+Increased stack sizes for certain resources from 500 to 750
+Increased stack size for certain ammo (arrows, bolts, shotgun) from 250 to 750
+Increased stack size for general ammo (other guns) from 500 to 1000
+Fixed bug for disappearing construction lights when picked up
+Adjusted clothing drop percentages upwards a tad
+Increased drop percentages on resources from box pallets
+Added candle and torch lighted glass block, craftable at the workbench
+

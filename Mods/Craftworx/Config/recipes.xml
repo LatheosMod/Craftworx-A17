@@ -227,6 +227,17 @@
 	<ingredient name="resourceOil" count="1"/>
 </recipe>		
 
+<!-- Lighted Blocks -->
+<recipe name="glassTorchLightBlock" count="1" craft_area="workbench"> 
+	<ingredient name="glassCTRSheet" count="6"/>
+	<ingredient name="meleeToolTorch" count="1"/>
+</recipe>
+
+<recipe name="glassCandleLightBlock" count="1" craft_area="workbench">
+	<ingredient name="glassCTRSheet" count="6"/>
+	<ingredient name="candle" count="1"/>
+</recipe>
+
 <!-- Adobe Blocks -->
 <recipe name="resourceAdobe" count="1">
 	<ingredient name="resourceClayLump" count="1"/>

@@ -82,11 +82,11 @@
 </insertBefore>
 
 <!-- Reducing clothing item drop percentages -->
-<set xpath="/lootcontainers/lootcontainer[@id='6']/item[@group='clothes']/@prob">0.5</set> <!-- Nightstand / Dressers -->
-<set xpath="/lootcontainers/lootcontainer[@id='13']/item[@group='clothes']/@prob">0.5</set> <!-- Laundry Basket -->
-<set xpath="/lootcontainers/lootcontainer[@id='18']/item[@group='clothes']/@prob">0.15</set> <!-- Washing Machine -->
-<set xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='clothes']/@prob">0.2</set> <!-- Metal Desk -->
-<set xpath="/lootcontainers/lootcontainer[@id='43']/item[@group='clothes']/@prob">0.5</set> <!-- Lockers -->
+<set xpath="/lootcontainers/lootcontainer[@id='6']/item[@group='clothes']/@prob">0.7</set> <!-- Nightstand / Dressers -->
+<set xpath="/lootcontainers/lootcontainer[@id='13']/item[@group='clothes']/@prob">0.6</set> <!-- Laundry Basket -->
+<set xpath="/lootcontainers/lootcontainer[@id='18']/item[@group='clothes']/@prob">0.2</set> <!-- Washing Machine -->
+<set xpath="/lootcontainers/lootcontainer[@id='24']/item[@group='clothes']/@prob">0.15</set> <!-- Metal Desk -->
+<set xpath="/lootcontainers/lootcontainer[@id='43']/item[@group='clothes']/@prob">0.6</set> <!-- Lockers -->
 
 <!-- Putting turds back in toilets -->
 <append xpath="/lootcontainers/lootgroup[@name='toiletLoot']"> 

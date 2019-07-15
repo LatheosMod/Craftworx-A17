@@ -7342,6 +7342,10 @@ House_Door_2_v1(Unlocked),blocks,Block,KgNone,Unlocked House Front Door 2,,
 House_Door_2_v2(Unlocked),blocks,Block,KgNone,Unlocked House Front Door 2 v2,,
 House_Door_2_v3(Unlocked),blocks,Block,KgNone,Unlocked House Front Door 2 v3,,
 
+glassLightBlockDesc,blocks,Block,KgNone,"These special glass blocks can shed a little light from the walls, ceilings, or floors of your buildings. Crafted at a workbench.",,
+glassCandleLightBlock,blocks,Block,KgNone,Candle Light Glass,,
+glassTorchLightBlock,blocks,Block,KgNone,Torch Light Glass,,
+
 adobeGroupDesc,blocks,Block,KgNone,Block made from adobe. Upgrades to concrete.,,
 
 adobeWhiteBlock,blocks,Block,KgNone,Adobe White Block,Bloc d'adobe blanc,Weißer Adobe – Block,,Bloque de adobe color blanco
